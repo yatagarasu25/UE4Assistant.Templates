@@ -1,0 +1,46 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cpp" #>
+<#@ parameter name="modulename" type="System.String" #>
+<#@ parameter name="isprimary" type="System.Boolean" #>
+#include "<#= this.modulename #>PrivatePCH.h"
+#include "Core.h"
+#include "ModuleManager.h"
+
+#include "<#= this.modulename #>.final.h"
+
+
+
+#define LOCTEXT_NAMESPACE "F<#= this.modulename #>Module"
+
+
+
+<# if (isprimary) { #>
+<# } else { #>
+void F<#= this.modulename #>Module::StartupModule()
+{
+}
+
+void F<#= this.modulename #>Module::ShutdownModule()
+{
+}
+<# } #>
+
+
+
+#undef LOCTEXT_NAMESPACE
+
+
+
+<# if (isprimary) { #>
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, <#= this.modulename #>, "<#= this.modulename #>");
+<# } else { #>
+IMPLEMENT_MODULE(F<#= this.modulename #>Module, <#= this.modulename #>)
+<# } #>
+
+DEFINE_LOG_CATEGORY(Log<#= this.modulename #>);
+//DEFINE_LOG_CATEGORY(Log<#= this.modulename #>Init);
+//DEFINE_LOG_CATEGORY(Log<#= this.modulename #>CriticalErrors);

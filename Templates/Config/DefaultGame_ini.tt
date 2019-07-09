@@ -1,0 +1,42 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ parameter name="modulename" type="System.String" #>
+[/Script/EngineSettings.GeneralProjectSettings]
+ProjectID=2DC5249F401CDB8DB39F1CAD4C568361
+ProjectName=<#= this.modulename #>Game
+ProjectVersion=0.0.0.1
+ProjectDisplayedTitle=
+
+[/Script/UnrealEd.ProjectPackagingSettings]
+BuildConfiguration=PPBC_Development
+FullRebuild=False
+ForDistribution=False
+IncludeDebugFiles=True
+bNativizeBlueprintAssets=False
+UsePakFile=True
+bGenerateChunks=False
+bChunkHardReferencesOnly=False
+bBuildHttpChunkInstallData=False
+HttpChunkInstallDataDirectory=(Path="")
+HttpChunkInstallDataVersion=
+IncludePrerequisites=True
+ApplocalPrerequisitesDirectory=(Path="")
+IncludeCrashReporter=True
+InternationalizationPreset=All
+-CulturesToStage=en
++CulturesToStage=en
++CulturesToStage=zh-CN
++CulturesToStage=eo
+DefaultCulture=en
+bCookAll=False
+bCookMapsOnly=False
+bCompressed=False
+bEncryptIniFiles=False
+bSkipEditorContent=False
++DirectoriesToNeverCook=(Path="TestContent")
+
+

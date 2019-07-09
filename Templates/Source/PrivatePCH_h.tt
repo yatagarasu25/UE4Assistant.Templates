@@ -1,0 +1,24 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".h" #>
+<#@ parameter name="modulename" type="System.String" #>
+#pragma once
+
+#include "<#= this.modulename #>.h"
+
+// You should place include statements to your module's private header files here.  You only need to
+// add includes for headers that are used in most of your module's source files though.
+
+
+
+//General Log
+DECLARE_LOG_CATEGORY_EXTERN(Log<#= this.modulename #>, Log, All);
+
+//Logging during module startup
+//DECLARE_LOG_CATEGORY_EXTERN(Log<#= this.modulename #>Init, Log, All);
+
+//Logging for Critical Errors that must always be addressed
+//DECLARE_LOG_CATEGORY_EXTERN(Log<#= this.modulename #>CriticalErrors, Log, All);

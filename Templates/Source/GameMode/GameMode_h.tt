@@ -1,0 +1,28 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ parameter name="modulename" type="System.String" #>
+#pragma once
+
+#include "GameFramework/GameModeBase.h"
+#include "<#= this.modulename #>GameMode.generated.h"
+
+
+
+UCLASS()
+class <#= this.modulename.ToUpper() #>_API A<#= this.modulename #>GameMode : public AGameModeBase
+{
+	GENERATED_BODY()
+
+
+public:
+	A<#= this.modulename #>GameMode(const FObjectInitializer& ObjectInitializer);
+
+
+protected:
+	virtual class AActor* FindPlayerStart_Implementation(class AController* Player, const FString& IncomingName) override;
+	virtual void InitStartSpot_Implementation(class AActor* StartSpot, class AController* NewPlayer) override;
+};

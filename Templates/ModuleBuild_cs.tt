@@ -1,0 +1,45 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ parameter name="modulename" type="System.String" #>
+using UnrealBuildTool;
+
+
+
+public class <#= this.modulename #> : ModuleRules
+{
+	public <#= this.modulename #>(TargetInfo Target)
+	{
+		PublicIncludePaths.AddRange(new string[] {
+				"<#= this.modulename #>/Public"
+			});
+
+
+		PrivateIncludePaths.AddRange(new string[] {
+				"<#= this.modulename #>/Private",
+			});
+
+
+		PublicDependencyModuleNames.AddRange(new string[] {
+				"Core",
+			});
+
+		PublicDependencyModuleNames.AddRange(new string[] {
+			});
+
+
+		PrivateDependencyModuleNames.AddRange(new string[] {
+				"CoreUObject",
+				"Engine",
+			});
+
+		PrivateDependencyModuleNames.AddRange(new string[] {
+			});
+
+
+		DynamicallyLoadedModuleNames.AddRange(new string[]{});
+	}
+}

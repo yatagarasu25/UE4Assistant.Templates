@@ -1,0 +1,34 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ parameter name="modulename" type="System.String" #>
+#include "<#= this.modulename #>PrivatePCH.h"
+#include "<#= this.modulename #>GameMode.h"
+
+
+
+#define LOCTEXT_NAMESPACE "<#= this.modulename #>"
+
+
+
+A<#= this.modulename #>GameMode::A<#= this.modulename #>GameMode(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
+{
+}
+
+AActor* A<#= this.modulename #>GameMode::FindPlayerStart_Implementation(AController* Player, const FString& IncomingName)
+{
+	return Super::FindPlayerStart_Implementation(Player, IncomingName);
+}
+
+void A<#= this.modulename #>GameMode::InitStartSpot_Implementation(AActor* StartSpot, AController* NewPlayer)
+{
+	Super::InitStartSpot_Implementation(StartSpot, NewPlayer);
+}
+
+
+
+#undef LOCTEXT_NAMESPACE

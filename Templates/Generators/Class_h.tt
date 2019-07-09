@@ -1,0 +1,26 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ parameter name="modulename" type="System.String" #>
+<#@ parameter name="objectname" type="System.String" #>
+<#@ parameter name="objectpath" type="System.String" #>
+<#@ parameter name="basename" type="System.String" #>
+<#@ parameter name="typename" type="System.String" #>
+#pragma once
+
+#include "<#= this.objectname #>.generated.h"
+
+
+
+UCLASS()
+class <#= this.modulename.ToUpper() #>_API <#= this.typename #><#= this.objectname #> : public <#= this.basename #>
+{
+	GENERATED_BODY()
+
+
+public:
+	<#= this.typename #><#= this.objectname #>(const FObjectInitializer& ObjectInitializer);
+};

@@ -1,0 +1,46 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ parameter name="modulename" type="System.String" #>
+#include "<#= this.modulename #>PrivatePCH.h"
+#include "<#= this.modulename #>BlueprintFunctionLibrary.h"
+
+#include "GameMode/<#= this.modulename #>GameMode.h"
+#include "GameState/<#= this.modulename #>GameState.h"
+#include "PlayerState/<#= this.modulename #>PlayerState.h"
+#include "<#= this.modulename #>GameInstance.h"
+
+#include "<#= this.modulename #>.final.h"
+
+
+
+U<#= this.modulename #>GameInstance* U<#= this.modulename #>BlueprintFunctionLibrary::GetGameInstance(const UObject* WorldContextObject)
+{
+	return Cast<U<#= this.modulename #>GameInstance>(UGameplayStatics::GetGameInstance(WorldContextObject));
+}
+
+A<#= this.modulename #>GameMode* U<#= this.modulename #>BlueprintFunctionLibrary::GetGameMode(const UObject* WorldContextObject)
+{
+	return Cast<A<#= this.modulename #>GameMode>(UGameplayStatics::GetGameMode(WorldContextObject));
+}
+
+A<#= this.modulename #>GameState* U<#= this.modulename #>BlueprintFunctionLibrary::GetGameState(UObject* WorldContextObject)
+{
+	return Cast<A<#= this.modulename #>GameState>(UGameplayStatics::GetGameState(WorldContextObject));
+}
+
+A<#= this.modulename #>PlayerState* U<#= this.modulename #>BlueprintFunctionLibrary::GetPlayerState(AActor* PlayerPawnOrController)
+{
+	APlayerController* Controller = Cast<APlayerController>(PlayerPawnOrController);
+	if (IsValid(Controller))
+		return Cast<A<#= this.modulename #>PlayerState>(Controller->PlayerState);
+
+	APawn* Pawn = Cast<APawn>(PlayerPawnOrController);
+	if (IsValid(Controller))
+		return Cast<A<#= this.modulename #>PlayerState>(Pawn->PlayerState);
+
+	return nullptr;
+}
