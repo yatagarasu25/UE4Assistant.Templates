@@ -15,6 +15,7 @@ using System.Collections.Generic;
 public class <#= this.targetname #>Target : TargetRules
 {
 	public <#= this.targetname #>Target(TargetInfo Target)
+		: base(Target)
 	{
 		Type = TargetType.<#= this.targettype #>;
 	}

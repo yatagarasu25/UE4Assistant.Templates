@@ -42,16 +42,17 @@ namespace UE4Assistant.Templates
             
             #line default
             #line hidden
-            this.Write("(TargetInfo Target)\r\n\t{\r\n\t\tPublicIncludePaths.AddRange(new string[] {\r\n\t\t\t\t\"");
+            this.Write("(ReadOnlyTargetRules Target)\r\n\t\t: base(Target)\r\n\t{\r\n\t\tPCHUsage = PCHUsageMode.Use" +
+                    "ExplicitOrSharedPCHs;\r\n\r\n\t\tPublicIncludePaths.AddRange(new string[] {\r\n\t\t\t\t\"");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
+            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("/Public\"\r\n\t\t\t});\r\n\r\n\r\n\t\tPrivateIncludePaths.AddRange(new string[] {\r\n\t\t\t\t\"");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
+            #line 25 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default

@@ -11,8 +11,11 @@ using UnrealBuildTool;
 
 public class <#= this.modulename #> : ModuleRules
 {
-	public <#= this.modulename #>(TargetInfo Target)
+	public <#= this.modulename #>(ReadOnlyTargetRules Target)
+		: base(Target)
 	{
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
 		PublicIncludePaths.AddRange(new string[] {
 				"<#= this.modulename #>/Public"
 			});

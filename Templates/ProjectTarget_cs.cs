@@ -42,9 +42,9 @@ namespace UE4Assistant.Templates
             
             #line default
             #line hidden
-            this.Write("Target(TargetInfo Target)\r\n\t{\r\n\t\tType = TargetType.");
+            this.Write("Target(TargetInfo Target)\r\n\t\t: base(Target)\r\n\t{\r\n\t\tType = TargetType.");
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
+            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.targettype));
             
             #line default
@@ -64,7 +64,7 @@ namespace UE4Assistant.Templates
 	{
 		OutExtraModuleNames.AddRange(new string[] { """);
             
-            #line 32 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
+            #line 33 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(System.String.Join("\",\"", this.extramodulenames)));
             
             #line default
