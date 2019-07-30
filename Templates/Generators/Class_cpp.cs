@@ -30,59 +30,71 @@ namespace UE4Assistant.Templates.Generators
         {
             this.Write("#include \"");
             
-            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PrivatePCH.h\"\r\n#include \"");
             
-            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectpath));
             
             #line default
             #line hidden
             
-            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
             #line hidden
             this.Write(".h\"\r\n\r\n#include \"");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(".final.h\"\r\n\r\n\r\n\r\n");
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+ if(hasConstructor) { 
+            
+            #line default
+            #line hidden
+            
+            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.typename));
             
             #line default
             #line hidden
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
             #line hidden
             this.Write("::");
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.typename));
             
             #line default
             #line hidden
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
             #line hidden
             this.Write("(const FObjectInitializer& ObjectInitializer)\r\n\t: Super(ObjectInitializer)\r\n{\r\n}\r" +
                     "\n");
+            
+            #line 24 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+ } 
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
         
@@ -150,6 +162,19 @@ private string typename
     get
     {
         return this._typenameField;
+    }
+}
+
+private bool _hasConstructorField;
+
+/// <summary>
+/// Access the hasConstructor parameter of the template.
+/// </summary>
+private bool hasConstructor
+{
+    get
+    {
+        return this._hasConstructorField;
     }
 }
 
@@ -229,6 +254,20 @@ if ((typenameValueAcquired == false))
     if ((data != null))
     {
         this._typenameField = ((string)(data));
+    }
+}
+bool hasConstructorValueAcquired = false;
+if (this.Session.ContainsKey("hasConstructor"))
+{
+    this._hasConstructorField = ((bool)(this.Session["hasConstructor"]));
+    hasConstructorValueAcquired = true;
+}
+if ((hasConstructorValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("hasConstructor");
+    if ((data != null))
+    {
+        this._hasConstructorField = ((bool)(data));
     }
 }
 

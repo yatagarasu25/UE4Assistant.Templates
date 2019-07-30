@@ -7,10 +7,14 @@
 <#@ parameter name="modulename" type="System.String" #>
 <#@ parameter name="objectname" type="System.String" #>
 <#@ parameter name="objectpath" type="System.String" #>
+<#@ parameter name="extraincludes" type="System.Collections.Generic.List<System.String>" #>
 <#@ parameter name="basename" type="System.String" #>
 <#@ parameter name="typename" type="System.String" #>
+<#@ parameter name="hasConstructor" type="System.Boolean" #>
 #pragma once
 
+<# foreach (string include in this.extraincludes) { #>#include "<#= include #>"
+<# }#>
 #include "<#= this.objectname #>.generated.h"
 
 
@@ -22,5 +26,5 @@ class <#= this.modulename.ToUpper() #>_API <#= this.typename #><#= this.objectna
 
 
 public:
-	<#= this.typename #><#= this.objectname #>(const FObjectInitializer& ObjectInitializer);
-};
+	<# if(hasConstructor) { #> <#= this.typename #><#= this.objectname #>(const FObjectInitializer& ObjectInitializer);
+<# } #>};
