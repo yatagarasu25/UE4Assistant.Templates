@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Source.PlayerState
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class PlayerState_h : PlayerState_hBase
     {
@@ -30,28 +30,28 @@ namespace UE4Assistant.Templates.Source.PlayerState
         {
             this.Write("#pragma once\r\n\r\n#include \"GameFramework/PlayerState.h\"\r\n#include \"");
             
-            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
+            #line 11 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PlayerState.generated.h\"\r\n\r\n\r\n\r\nUCLASS()\r\nclass ");
             
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
+            #line 16 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_API A");
             
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
+            #line 16 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PlayerState : public APlayerState\r\n{\r\n\tGENERATED_BODY()\r\n\r\n\r\npublic:\r\n\tA");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
+            #line 22 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -62,7 +62,7 @@ namespace UE4Assistant.Templates.Source.PlayerState
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_h.tt"
 
 private string _modulenameField;
 

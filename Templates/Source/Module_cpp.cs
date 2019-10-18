@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Source
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class Module_cpp : Module_cppBase
     {
@@ -30,125 +30,125 @@ namespace UE4Assistant.Templates.Source
         {
             this.Write("#include \"");
             
-            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 9 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PrivatePCH.h\"\r\n#include \"Core.h\"\r\n#include \"ModuleManager.h\"\r\n\r\n#include \"");
             
-            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 13 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(".final.h\"\r\n\r\n\r\n\r\n#define LOCTEXT_NAMESPACE \"F");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 17 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("Module\"\r\n\r\n\r\n\r\n");
             
-            #line 21 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 21 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
  if (isprimary) { 
             
             #line default
             #line hidden
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 22 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
  } else { 
             
             #line default
             #line hidden
             this.Write("void F");
             
-            #line 23 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 23 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("Module::StartupModule()\r\n{\r\n}\r\n\r\nvoid F");
             
-            #line 27 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 27 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("Module::ShutdownModule()\r\n{\r\n}\r\n");
             
-            #line 30 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 30 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\r\n\r\n\r\n#undef LOCTEXT_NAMESPACE\r\n\r\n\r\n\r\n");
             
-            #line 38 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 38 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
  if (isprimary) { 
             
             #line default
             #line hidden
             this.Write("IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, ");
             
-            #line 39 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 39 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(", \"");
             
-            #line 39 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 39 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("\");\r\n");
             
-            #line 40 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 40 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
  } else { 
             
             #line default
             #line hidden
             this.Write("IMPLEMENT_MODULE(F");
             
-            #line 41 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 41 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("Module, ");
             
-            #line 41 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 41 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(")\r\n");
             
-            #line 42 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 42 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\r\nDEFINE_LOG_CATEGORY(Log");
             
-            #line 44 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 44 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(");\r\n//DEFINE_LOG_CATEGORY(Log");
             
-            #line 45 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 45 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("Init);\r\n//DEFINE_LOG_CATEGORY(Log");
             
-            #line 46 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+            #line 46 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -157,7 +157,7 @@ namespace UE4Assistant.Templates.Source
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_cpp.tt"
 
 private string _modulenameField;
 

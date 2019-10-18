@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ModuleBuild_cs : ModuleBuild_csBase
     {
@@ -30,14 +30,14 @@ namespace UE4Assistant.Templates
         {
             this.Write("using UnrealBuildTool;\r\n\r\n\r\n\r\npublic class ");
             
-            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
+            #line 12 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(" : ModuleRules\r\n{\r\n\tpublic ");
             
-            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
+            #line 14 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -45,14 +45,14 @@ namespace UE4Assistant.Templates
             this.Write("(ReadOnlyTargetRules Target)\r\n\t\t: base(Target)\r\n\t{\r\n\t\tPCHUsage = PCHUsageMode.Use" +
                     "ExplicitOrSharedPCHs;\r\n\r\n\t\tPublicIncludePaths.AddRange(new string[] {\r\n\t\t\t\t\"");
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("/Public\"\r\n\t\t\t});\r\n\r\n\r\n\t\tPrivateIncludePaths.AddRange(new string[] {\r\n\t\t\t\t\"");
             
-            #line 25 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
+            #line 25 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -85,7 +85,7 @@ namespace UE4Assistant.Templates
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ModuleBuild_cs.tt"
 
 private string _modulenameField;
 

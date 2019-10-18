@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Source.GameMode
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class GameMode_cpp : GameMode_cppBase
     {
@@ -30,35 +30,35 @@ namespace UE4Assistant.Templates.Source.GameMode
         {
             this.Write("#include \"");
             
-            #line 8 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+            #line 8 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PrivatePCH.h\"\r\n#include \"");
             
-            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+            #line 9 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameMode.h\"\r\n\r\n\r\n\r\n#define LOCTEXT_NAMESPACE \"");
             
-            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+            #line 13 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("\"\r\n\r\n\r\n\r\nA");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+            #line 17 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameMode::A");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+            #line 17 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -66,7 +66,7 @@ namespace UE4Assistant.Templates.Source.GameMode
             this.Write("GameMode(const FObjectInitializer& ObjectInitializer)\r\n\t: Super(ObjectInitializer" +
                     ")\r\n{\r\n}\r\n\r\nAActor* A");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+            #line 22 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -75,7 +75,7 @@ namespace UE4Assistant.Templates.Source.GameMode
                     "mingName)\r\n{\r\n\treturn Super::FindPlayerStart_Implementation(Player, IncomingName" +
                     ");\r\n}\r\n\r\nvoid A");
             
-            #line 27 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+            #line 27 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -86,7 +86,7 @@ namespace UE4Assistant.Templates.Source.GameMode
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameMode\GameMode_cpp.tt"
 
 private string _modulenameField;
 

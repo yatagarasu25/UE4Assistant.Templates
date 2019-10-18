@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class Interface_h : Interface_hBase
     {
@@ -30,35 +30,35 @@ namespace UE4Assistant.Templates.Generators
         {
             this.Write("#pragma once\r\n\r\n#include \"");
             
-            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            #line 12 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
             #line hidden
             this.Write(".generated.h\"\r\n\r\n\r\n\r\nUINTERFACE(Blueprintable)\r\nclass ");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            #line 17 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_API U");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            #line 17 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
             #line hidden
             this.Write(" : public UInterface\r\n{\r\n\tGENERATED_UINTERFACE_BODY()\r\n};\r\n\r\nclass ");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            #line 22 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_API I");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            #line 22 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
@@ -67,7 +67,7 @@ namespace UE4Assistant.Templates.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
 
 private string _modulenameField;
 

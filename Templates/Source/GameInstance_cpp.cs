@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Source
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class GameInstance_cpp : GameInstance_cppBase
     {
@@ -30,84 +30,84 @@ namespace UE4Assistant.Templates.Source
         {
             this.Write("#include \"");
             
-            #line 8 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 8 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PrivatePCH.h\"\r\n#include \"");
             
-            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 9 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance.h\"\r\n\r\n#include \"");
             
-            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 11 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(".final.h\"\r\n\r\n\r\n\r\n#define LOCTEXT_NAMESPACE \"");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 15 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("\"\r\n\r\n\r\n\r\nU");
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 19 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance::U");
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 19 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance()\r\n{\r\n\tbSkipLogo = false;\r\n}\r\n\r\nU");
             
-            #line 24 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 24 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance *U");
             
-            #line 24 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 24 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance::GetInstance(const UObject* WorldContextObject)\r\n{\r\n\treturn Cast<U");
             
-            #line 26 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 26 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance>(UGameplayStatics::GetInstance(WorldContextObject));\r\n}\r\n\r\nvoid U");
             
-            #line 29 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 29 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance::Init()\r\n{\r\n\tSuper::Init();\r\n}\r\n\r\nvoid U");
             
-            #line 34 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 34 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance::Shutdown()\r\n{\r\n\tSuper::Shutdown();\r\n}\r\n\r\nvoid U");
             
-            #line 39 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+            #line 39 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -117,7 +117,7 @@ namespace UE4Assistant.Templates.Source
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_cpp.tt"
 
 private string _modulenameField;
 

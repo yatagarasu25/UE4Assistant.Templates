@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Source
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class Module_h : Module_hBase
     {
@@ -30,41 +30,41 @@ namespace UE4Assistant.Templates.Source
         {
             this.Write("#pragma once\r\n\r\n#include \"Engine.h\"\r\n#include \"ModuleManager.h\"\r\n\r\n\r\n\r\n");
             
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 16 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
  if (isprimary) { 
             
             #line default
             #line hidden
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 17 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
  } else { 
             
             #line default
             #line hidden
             this.Write("class F");
             
-            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 18 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("Module : public IModuleInterface\r\n{\r\npublic:\r\n\tstatic inline F");
             
-            #line 21 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 21 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("Module& Get() { return FModuleManager::LoadModuleChecked<F");
             
-            #line 21 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 21 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("Module>(\"");
             
-            #line 21 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 21 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -72,7 +72,7 @@ namespace UE4Assistant.Templates.Source
             this.Write("\"); }\r\n\tstatic inline bool IsAvailable() { return FModuleManager::Get().IsModuleL" +
                     "oaded(\"");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 22 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -80,14 +80,14 @@ namespace UE4Assistant.Templates.Source
             this.Write("\"); }\r\n\r\n\t/** IModuleInterface implementation */\r\n\tvirtual void StartupModule() o" +
                     "verride;\r\n\tvirtual void ShutdownModule() override;\r\n};\r\n");
             
-            #line 28 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 28 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\r\n\r\n\r\nstruct F");
             
-            #line 32 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+            #line 32 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -96,7 +96,7 @@ namespace UE4Assistant.Templates.Source
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Module_h.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Module_h.tt"
 
 private string _modulenameField;
 

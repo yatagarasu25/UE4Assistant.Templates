@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class SimpleClass_cpp : SimpleClass_cppBase
     {
@@ -30,27 +30,27 @@ namespace UE4Assistant.Templates.Generators
         {
             this.Write("#include \"");
             
-            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
+            #line 12 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PrivatePCH.h\"\r\n#include \"");
             
-            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
+            #line 13 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectpath));
             
             #line default
             #line hidden
             
-            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
+            #line 13 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
             #line hidden
             this.Write(".h\"\r\n\r\n#include \"");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
+            #line 15 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -59,7 +59,7 @@ namespace UE4Assistant.Templates.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
 
 private string _modulenameField;
 

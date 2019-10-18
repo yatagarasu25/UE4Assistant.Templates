@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Source.PlayerState
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class PlayerState_cpp : PlayerState_cppBase
     {
@@ -30,35 +30,35 @@ namespace UE4Assistant.Templates.Source.PlayerState
         {
             this.Write("#include \"");
             
-            #line 8 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+            #line 8 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PrivatePCH.h\"\r\n#include \"");
             
-            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+            #line 9 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PlayerState.h\"\r\n\r\n#include \"");
             
-            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+            #line 11 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(".final.h\"\r\n\r\n\r\n\r\nA");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+            #line 15 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PlayerState::A");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+            #line 15 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -66,14 +66,14 @@ namespace UE4Assistant.Templates.Source.PlayerState
             this.Write("PlayerState(const FObjectInitializer& ObjectInitializer)\r\n\t: Super(ObjectInitiali" +
                     "zer)\r\n{\r\n\tPrimaryActorTick.bCanEverTick = true;\r\n}\r\n\r\nvoid A");
             
-            #line 21 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+            #line 21 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PlayerState::BeginPlay()\r\n{\r\n\tSuper::BeginPlay();\r\n}\r\n\r\nvoid A");
             
-            #line 26 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+            #line 26 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -82,7 +82,7 @@ namespace UE4Assistant.Templates.Source.PlayerState
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\PlayerState\PlayerState_cpp.tt"
 
 private string _modulenameField;
 

@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Source
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class GameInstance_h : GameInstance_hBase
     {
@@ -30,21 +30,21 @@ namespace UE4Assistant.Templates.Source
         {
             this.Write("#pragma once\r\n\r\n#include \"Engine/GameInstance.h\"\r\n#include \"");
             
-            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
+            #line 11 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance.generated.h\"\r\n\r\n\r\n\r\nUCLASS(Config = GameInstance)\r\nclass ");
             
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
+            #line 16 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_API U");
             
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
+            #line 16 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -52,7 +52,7 @@ namespace UE4Assistant.Templates.Source
             this.Write("GameInstance : public UGameInstance\r\n{\r\n\tGENERATED_BODY()\r\n\r\n\r\npublic:\r\n\tstatic U" +
                     "");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
+            #line 22 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -87,7 +87,7 @@ public:
 public:
 	U");
             
-            #line 50 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
+            #line 50 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -97,7 +97,7 @@ public:
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\GameInstance_h.tt"
 
 private string _modulenameField;
 

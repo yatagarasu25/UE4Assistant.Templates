@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Config
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Config\DefaultGameUserSettings_ini.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Config\DefaultGameUserSettings_ini.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class DefaultGameUserSettings_ini : DefaultGameUserSettings_iniBase
     {
@@ -33,7 +33,7 @@ namespace UE4Assistant.Templates.Config
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Config\DefaultGameUserSettings_ini.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Config\DefaultGameUserSettings_ini.tt"
 
 private string _modulenameField;
 

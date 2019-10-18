@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Source
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class Statics_cpp : Statics_cppBase
     {
@@ -30,63 +30,63 @@ namespace UE4Assistant.Templates.Source
         {
             this.Write("#include \"");
             
-            #line 8 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 8 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PrivatePCH.h\"\r\n#include \"");
             
-            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 9 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("BlueprintFunctionLibrary.h\"\r\n\r\n#include \"GameMode/");
             
-            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 11 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameMode.h\"\r\n#include \"GameState/");
             
-            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 12 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameState.h\"\r\n#include \"PlayerState/");
             
-            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 13 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PlayerState.h\"\r\n#include \"");
             
-            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 14 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance.h\"\r\n\r\n#include \"");
             
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 16 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(".final.h\"\r\n\r\n\r\n\r\nU");
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance* U");
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -94,21 +94,21 @@ namespace UE4Assistant.Templates.Source
             this.Write("BlueprintFunctionLibrary::GetGameInstance(const UObject* WorldContextObject)\r\n{\r\n" +
                     "\treturn Cast<U");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 22 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameInstance>(UGameplayStatics::GetGameInstance(WorldContextObject));\r\n}\r\n\r\nA");
             
-            #line 25 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 25 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameMode* U");
             
-            #line 25 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 25 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -116,21 +116,21 @@ namespace UE4Assistant.Templates.Source
             this.Write("BlueprintFunctionLibrary::GetGameMode(const UObject* WorldContextObject)\r\n{\r\n\tret" +
                     "urn Cast<A");
             
-            #line 27 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 27 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameMode>(UGameplayStatics::GetGameMode(WorldContextObject));\r\n}\r\n\r\nA");
             
-            #line 30 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 30 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameState* U");
             
-            #line 30 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 30 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -138,21 +138,21 @@ namespace UE4Assistant.Templates.Source
             this.Write("BlueprintFunctionLibrary::GetGameState(UObject* WorldContextObject)\r\n{\r\n\treturn C" +
                     "ast<A");
             
-            #line 32 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 32 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("GameState>(UGameplayStatics::GetGameState(WorldContextObject));\r\n}\r\n\r\nA");
             
-            #line 35 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 35 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PlayerState* U");
             
-            #line 35 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 35 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -161,7 +161,7 @@ namespace UE4Assistant.Templates.Source
                     "ayerController* Controller = Cast<APlayerController>(PlayerPawnOrController);\r\n\t" +
                     "if (IsValid(Controller))\r\n\t\treturn Cast<A");
             
-            #line 39 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 39 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -169,7 +169,7 @@ namespace UE4Assistant.Templates.Source
             this.Write("PlayerState>(Controller->PlayerState);\r\n\r\n\tAPawn* Pawn = Cast<APawn>(PlayerPawnOr" +
                     "Controller);\r\n\tif (IsValid(Controller))\r\n\t\treturn Cast<A");
             
-            #line 43 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+            #line 43 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
@@ -178,7 +178,7 @@ namespace UE4Assistant.Templates.Source
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Source\Statics_cpp.tt"
 
 private string _modulenameField;
 

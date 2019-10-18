@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class Class_cpp : Class_cppBase
     {
@@ -30,59 +30,59 @@ namespace UE4Assistant.Templates.Generators
         {
             this.Write("#include \"");
             
-            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 13 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write("PrivatePCH.h\"\r\n#include \"");
             
-            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 14 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectpath));
             
             #line default
             #line hidden
             
-            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 14 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
             #line hidden
             this.Write(".h\"\r\n\r\n#include \"");
             
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 16 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
             
             #line default
             #line hidden
             this.Write(".final.h\"\r\n\r\n\r\n\r\n");
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
  if(hasConstructor) { 
             
             #line default
             #line hidden
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.typename));
             
             #line default
             #line hidden
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
             #line hidden
             this.Write("::");
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.typename));
             
             #line default
             #line hidden
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
             
             #line default
@@ -90,7 +90,7 @@ namespace UE4Assistant.Templates.Generators
             this.Write("(const FObjectInitializer& ObjectInitializer)\r\n\t: Super(ObjectInitializer)\r\n{\r\n}\r" +
                     "\n");
             
-            #line 24 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+            #line 24 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
  } 
             
             #line default
@@ -98,7 +98,7 @@ namespace UE4Assistant.Templates.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Class_cpp.tt"
 
 private string _modulenameField;
 

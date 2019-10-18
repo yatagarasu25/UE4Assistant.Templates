@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
+    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ProjectTarget_cs : ProjectTarget_csBase
     {
@@ -30,21 +30,21 @@ namespace UE4Assistant.Templates
         {
             this.Write("using UnrealBuildTool;\r\nusing System.Collections.Generic;\r\n\r\n\r\n\r\npublic class ");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
+            #line 15 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.targetname));
             
             #line default
             #line hidden
             this.Write("Target : TargetRules\r\n{\r\n\tpublic ");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
+            #line 17 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.targetname));
             
             #line default
             #line hidden
             this.Write("Target(TargetInfo Target)\r\n\t\t: base(Target)\r\n\t{\r\n\t\tType = TargetType.");
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
+            #line 20 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.targettype));
             
             #line default
@@ -64,7 +64,7 @@ namespace UE4Assistant.Templates
 	{
 		OutExtraModuleNames.AddRange(new string[] { """);
             
-            #line 33 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
+            #line 33 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(System.String.Join("\",\"", this.extramodulenames)));
             
             #line default
@@ -73,7 +73,7 @@ namespace UE4Assistant.Templates
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
+        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\ProjectTarget_cs.tt"
 
 private string _targetnameField;
 
