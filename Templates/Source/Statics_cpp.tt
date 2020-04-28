@@ -5,6 +5,9 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
 <#@ parameter name="modulename" type="System.String" #>
+<#@ parameter name="hasFinalHeader" type="System.Boolean" #>
+<#@ parameter name="hasLocTextNamespace" type="System.Boolean" #>
+<#@ parameter name="locTextNamespaceName" type="System.String" #>
 #include "<#= this.modulename #>PrivatePCH.h"
 #include "<#= this.modulename #>BlueprintFunctionLibrary.h"
 
@@ -13,8 +16,11 @@
 #include "PlayerState/<#= this.modulename #>PlayerState.h"
 #include "<#= this.modulename #>GameInstance.h"
 
-#include "<#= this.modulename #>.final.h"
+<# if (hasFinalHeader) { #>#include "<#= this.modulename #>.final.h"
+<# } #>
 
+<# if (hasLocTextNamespace) { #>#define LOCTEXT_NAMESPACE "<#= this.locTextNamespaceName ?? this.modulename #>"
+<# } #>
 
 
 U<#= this.modulename #>GameInstance* U<#= this.modulename #>BlueprintFunctionLibrary::GetGameInstance(const UObject* WorldContextObject)
@@ -44,3 +50,7 @@ A<#= this.modulename #>PlayerState* U<#= this.modulename #>BlueprintFunctionLibr
 
 	return nullptr;
 }
+
+
+<# if (hasLocTextNamespace) { #>#undef LOCTEXT_NAMESPACE
+<# } #>

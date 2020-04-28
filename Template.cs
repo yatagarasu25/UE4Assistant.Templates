@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using SystemEx;
 using UE4Assistant.Templates;
 using UE4Assistant.Templates.Config;
 using UE4Assistant.Templates.Source;
@@ -7,13 +8,11 @@ using UE4Assistant.Templates.Source.GameMode;
 using UE4Assistant.Templates.Source.GameState;
 using UE4Assistant.Templates.Source.PlayerState;
 
-
-
 namespace UE4Assistant
 {
 	public static class Template
 	{
-		public static string TransformToText<TemplateType>(Dictionary<string, object> parameters) where TemplateType : new()
+		public static string TransformToText<TemplateType>(IDictionary<string, object> parameters) where TemplateType : new()
 		{
 			var TemplateInstance = new TemplateType();
 			typeof(TemplateType).GetProperty("Session").SetValue(TemplateInstance, parameters);
@@ -36,11 +35,10 @@ namespace UE4Assistant
 			Directory.CreateDirectory(privatePath);
 			Directory.CreateDirectory(publicPath);
 
-			Dictionary<string, object> parameters = new Dictionary<string, object>
-				{
-					{ "modulename", ModuleName },
-					{ "isprimary", false },
-				};
+			var parameters = new {
+				modulename = ModuleName,
+				isprimary = false
+			}.ToExpando();
 
 			File.WriteAllText(Path.Combine(modulePath, ModuleName + ".Build.cs")
 				, TransformToText<ModuleBuild_cs>(parameters));
@@ -71,7 +69,7 @@ namespace UE4Assistant
 				CreateModule(project.RootPath, module.Name);
 				project.Modules.Add(module);
 
-				Dictionary<string, object> parameters = new Dictionary<string, object>
+				var parameters = new Dictionary<string, object>
 				{
 					{ "targetname", module.Name },
 					{ "targettype", "Game" },

@@ -1,268 +1,302 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D12AD29-68B1-470F-9230-BD7796E58350}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UE4Assistant</RootNamespace>
+    <AssemblyName>UE4Assistant.Templates</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Properties\**" />
-    <EmbeddedResource Remove="Properties\**" />
-    <None Remove="Properties\**" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
-
   <ItemGroup>
-    <None Remove=".git" />
-    <None Remove=".gitignore" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Templates\Config\DefaultEditorSettings_ini.cs">
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template.cs" />
+    <Compile Include="Templates\Config\DefaultEditorSettings_ini.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DefaultEditorSettings_ini.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Config\DefaultEditor_ini.cs">
+    <Compile Include="Templates\Config\DefaultEditor_ini.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DefaultEditor_ini.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Config\DefaultEngine_ini.cs">
+    <Compile Include="Templates\Config\DefaultEngine_ini.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DefaultEngine_ini.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Config\DefaultGameUserSettings_ini.cs">
+    <Compile Include="Templates\Config\DefaultGameUserSettings_ini.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DefaultGameUserSettings_ini.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Config\DefaultGame_ini.cs">
+    <Compile Include="Templates\Config\DefaultGame_ini.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DefaultGame_ini.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Config\DefaultInput_ini.cs">
+    <Compile Include="Templates\Config\DefaultInput_ini.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DefaultInput_ini.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Generators\Class_cpp.cs">
+    <Compile Include="Templates\Generators\Class_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Class_cpp.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Generators\Class_h.cs">
+    <Compile Include="Templates\Generators\Class_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Class_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Generators\Interface_h.cs">
+    <Compile Include="Templates\Generators\Interface_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Interface_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Generators\SimpleClass_cpp.cs">
+    <Compile Include="Templates\Generators\SimpleClass_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SimpleClass_cpp.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Generators\SimpleClass_h.cs">
+    <Compile Include="Templates\Generators\SimpleClass_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SimpleClass_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\ModuleBuild_cs.cs">
+    <Compile Include="Templates\ModuleBuild_cs.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModuleBuild_cs.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\ProjectTarget_cs.cs">
+    <Compile Include="Templates\ProjectTarget_cs.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectTarget_cs.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\GameInstance_cpp.cs">
+    <Compile Include="Templates\Source\GameInstance_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameInstance_cpp.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\GameInstance_h.cs">
+    <Compile Include="Templates\Source\GameInstance_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameInstance_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\GameMode\GameMode_cpp.cs">
+    <Compile Include="Templates\Source\GameMode\GameMode_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameMode_cpp.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\GameMode\GameMode_h.cs">
+    <Compile Include="Templates\Source\GameMode\GameMode_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameMode_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\GameState\GameState_cpp.cs">
+    <Compile Include="Templates\Source\GameState\GameState_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameState_cpp.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\GameState\GameState_h.cs">
+    <Compile Include="Templates\Source\GameState\GameState_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameState_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\Module_cpp.cs">
+    <Compile Include="Templates\Source\Module_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Module_cpp.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\Module_h.cs">
+    <Compile Include="Templates\Source\Module_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Module_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\PlayerState\PlayerState_cpp.cs">
+    <Compile Include="Templates\Source\PlayerState\PlayerState_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PlayerState_cpp.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\PlayerState\PlayerState_h.cs">
+    <Compile Include="Templates\Source\PlayerState\PlayerState_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PlayerState_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\PrivatePCH_h.cs">
+    <Compile Include="Templates\Source\PrivatePCH_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PrivatePCH_h.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\Statics_cpp.cs">
+    <Compile Include="Templates\Source\Statics_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Statics_cpp.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\Statics_h.cs">
+    <Compile Include="Templates\Source\Statics_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Statics_h.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
-    <None Update="Templates\Config\DefaultEditorSettings_ini.tt">
+    <Content Include="Templates\Config\DefaultEditorSettings_ini.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DefaultEditorSettings_ini.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Config\DefaultEditor_ini.tt">
+    </Content>
+    <Content Include="Templates\Config\DefaultEditor_ini.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DefaultEditor_ini.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Config\DefaultEngine_ini.tt">
+    </Content>
+    <Content Include="Templates\Config\DefaultEngine_ini.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DefaultEngine_ini.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Config\DefaultGameUserSettings_ini.tt">
+    </Content>
+    <Content Include="Templates\Config\DefaultGameUserSettings_ini.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DefaultGameUserSettings_ini.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Config\DefaultGame_ini.tt">
+    </Content>
+    <Content Include="Templates\Config\DefaultGame_ini.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DefaultGame_ini.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Config\DefaultInput_ini.tt">
+    </Content>
+    <Content Include="Templates\Config\DefaultInput_ini.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DefaultInput_ini.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Generators\Class_cpp.tt">
+    </Content>
+    <Content Include="Templates\Generators\Class_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Class_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Generators\Class_h.tt">
+    </Content>
+    <Content Include="Templates\Generators\Class_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Class_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Generators\Interface_h.tt">
+    </Content>
+    <Content Include="Templates\Generators\Interface_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Interface_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Generators\SimpleClass_cpp.tt">
+    </Content>
+    <Content Include="Templates\Generators\SimpleClass_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SimpleClass_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Generators\SimpleClass_h.tt">
+    </Content>
+    <Content Include="Templates\Generators\SimpleClass_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SimpleClass_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\ModuleBuild_cs.tt">
+    </Content>
+    <Content Include="Templates\ModuleBuild_cs.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModuleBuild_cs.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\ProjectTarget_cs.tt">
+    </Content>
+    <Content Include="Templates\ProjectTarget_cs.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ProjectTarget_cs.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\GameInstance_cpp.tt">
+    </Content>
+    <Content Include="Templates\Source\GameInstance_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GameInstance_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\GameInstance_h.tt">
+    </Content>
+    <Content Include="Templates\Source\GameInstance_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GameInstance_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\GameMode\GameMode_cpp.tt">
+    </Content>
+    <Content Include="Templates\Source\GameMode\GameMode_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GameMode_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\GameMode\GameMode_h.tt">
+    </Content>
+    <Content Include="Templates\Source\GameMode\GameMode_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GameMode_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\GameState\GameState_cpp.tt">
+    </Content>
+    <Content Include="Templates\Source\GameState\GameState_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GameState_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\GameState\GameState_h.tt">
+    </Content>
+    <Content Include="Templates\Source\GameState\GameState_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GameState_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\Module_cpp.tt">
+    </Content>
+    <Content Include="Templates\Source\Module_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Module_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\Module_h.tt">
+    </Content>
+    <Content Include="Templates\Source\Module_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Module_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\PlayerState\PlayerState_cpp.tt">
+    </Content>
+    <Content Include="Templates\Source\PlayerState\PlayerState_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PlayerState_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\PlayerState\PlayerState_h.tt">
+    </Content>
+    <Content Include="Templates\Source\PlayerState\PlayerState_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PlayerState_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\PrivatePCH_h.tt">
+    </Content>
+    <Content Include="Templates\Source\PrivatePCH_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PrivatePCH_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\Statics_cpp.tt">
+    </Content>
+    <Content Include="Templates\Source\Statics_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Statics_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\Statics_h.tt">
+    </Content>
+    <Content Include="Templates\Source\Statics_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Statics_h.cs</LastGenOutput>
-    </None>
+    </Content>
   </ItemGroup>
-
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)UE4Assistant\UE4Assistant.csproj" />
+    <None Include="Key.snk" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UE4Assistant\UE4Assistant.csproj">
+      <Project>{60f43fc3-ef8d-4334-92e9-b75dbbad3545}</Project>
+      <Name>UE4Assistant</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,16 +6,18 @@
 <#@ output extension=".cpp" #>
 <#@ parameter name="modulename" type="System.String" #>
 <#@ parameter name="isprimary" type="System.Boolean" #>
+<#@ parameter name="hasFinalHeader" type="System.Boolean" #>
+<#@ parameter name="hasLocTextNamespace" type="System.Boolean" #>
+<#@ parameter name="locTextNamespaceName" type="System.String" #>
 #include "<#= this.modulename #>PrivatePCH.h"
 #include "Core.h"
 #include "ModuleManager.h"
 
-#include "<#= this.modulename #>.final.h"
+<# if (hasFinalHeader) { #>#include "<#= this.modulename #>.final.h"
+<# } #>
 
-
-
-#define LOCTEXT_NAMESPACE "F<#= this.modulename #>Module"
-
+<# if (hasLocTextNamespace) { #>#define LOCTEXT_NAMESPACE "<#= this.locTextNamespaceName ?? this.modulename #>"
+<# } #>
 
 
 <# if (isprimary) { #>
@@ -30,11 +32,6 @@ void F<#= this.modulename #>Module::ShutdownModule()
 <# } #>
 
 
-
-#undef LOCTEXT_NAMESPACE
-
-
-
 <# if (isprimary) { #>
 IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, <#= this.modulename #>, "<#= this.modulename #>");
 <# } else { #>
@@ -44,3 +41,7 @@ IMPLEMENT_MODULE(F<#= this.modulename #>Module, <#= this.modulename #>)
 DEFINE_LOG_CATEGORY(Log<#= this.modulename #>);
 //DEFINE_LOG_CATEGORY(Log<#= this.modulename #>Init);
 //DEFINE_LOG_CATEGORY(Log<#= this.modulename #>CriticalErrors);
+
+
+<# if (hasLocTextNamespace) { #>#undef LOCTEXT_NAMESPACE
+<# } #>

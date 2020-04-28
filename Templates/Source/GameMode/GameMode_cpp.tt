@@ -5,13 +5,17 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
 <#@ parameter name="modulename" type="System.String" #>
+<#@ parameter name="hasFinalHeader" type="System.Boolean" #>
+<#@ parameter name="hasLocTextNamespace" type="System.Boolean" #>
+<#@ parameter name="locTextNamespaceName" type="System.String" #>
 #include "<#= this.modulename #>PrivatePCH.h"
 #include "<#= this.modulename #>GameMode.h"
 
+<# if (hasFinalHeader) { #>#include "<#= this.modulename #>.final.h"
+<# } #>
 
-
-#define LOCTEXT_NAMESPACE "<#= this.modulename #>"
-
+<# if (hasLocTextNamespace) { #>#define LOCTEXT_NAMESPACE "<#= this.locTextNamespaceName ?? this.modulename #>"
+<# } #>
 
 
 A<#= this.modulename #>GameMode::A<#= this.modulename #>GameMode(const FObjectInitializer& ObjectInitializer)
@@ -30,5 +34,5 @@ void A<#= this.modulename #>GameMode::InitStartSpot_Implementation(AActor* Start
 }
 
 
-
-#undef LOCTEXT_NAMESPACE
+<# if (hasLocTextNamespace) { #>#undef LOCTEXT_NAMESPACE
+<# } #>
