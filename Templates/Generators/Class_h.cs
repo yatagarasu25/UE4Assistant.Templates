@@ -90,7 +90,6 @@ namespace UE4Assistant.Templates.Generators
             
             #line default
             #line hidden
-            this.Write(" ");
             
             #line 29 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.typename));

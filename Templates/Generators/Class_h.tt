@@ -26,5 +26,5 @@ class <#= this.modulename.ToUpper() #>_API <#= this.typename #><#= this.objectna
 
 
 public:
-	<# if(hasConstructor) { #> <#= this.typename #><#= this.objectname #>(const FObjectInitializer& ObjectInitializer);
+	<# if(hasConstructor) { #><#= this.typename #><#= this.objectname #>(const FObjectInitializer& ObjectInitializer);
 <# } #>};
