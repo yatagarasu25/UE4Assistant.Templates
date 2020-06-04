@@ -28,83 +28,63 @@ namespace UE4Assistant.Templates.Generators
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("#pragma once\r\n\r\n#include \"");
+            this.Write("UINTERFACE(Blueprintable)\r\nclass ");
             
-            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
-            
-            #line default
-            #line hidden
-            this.Write(".generated.h\"\r\n\r\n\r\n\r\nUINTERFACE(Blueprintable)\r\nclass ");
-            
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename.ToUpper()));
+            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.moduleName.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_API U");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
+            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.typeName));
             
             #line default
             #line hidden
-            this.Write(" : public UInterface\r\n{\r\n\tGENERATED_UINTERFACE_BODY()\r\n};\r\n\r\nclass ");
+            this.Write(" : public UInterface\r\n{\r\n\tGENERATED_BODY()\r\n};\r\n\r\nclass ");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename.ToUpper()));
+            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.moduleName.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_API I");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
+            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.typeName));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n\tGENERATED_IINTERFACE_BODY()\r\n};\r\n");
+            this.Write("\r\n{\r\n\tGENERATED_BODY()\r\n};\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
         #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Interface_h.tt"
 
-private string _modulenameField;
+private string _moduleNameField;
 
 /// <summary>
-/// Access the modulename parameter of the template.
+/// Access the moduleName parameter of the template.
 /// </summary>
-private string modulename
+private string moduleName
 {
     get
     {
-        return this._modulenameField;
+        return this._moduleNameField;
     }
 }
 
-private string _objectnameField;
+private string _typeNameField;
 
 /// <summary>
-/// Access the objectname parameter of the template.
+/// Access the typeName parameter of the template.
 /// </summary>
-private string objectname
+private string typeName
 {
     get
     {
-        return this._objectnameField;
-    }
-}
-
-private string _objectpathField;
-
-/// <summary>
-/// Access the objectpath parameter of the template.
-/// </summary>
-private string objectpath
-{
-    get
-    {
-        return this._objectpathField;
+        return this._typeNameField;
     }
 }
 
@@ -116,46 +96,32 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
-bool modulenameValueAcquired = false;
-if (this.Session.ContainsKey("modulename"))
+bool moduleNameValueAcquired = false;
+if (this.Session.ContainsKey("moduleName"))
 {
-    this._modulenameField = ((string)(this.Session["modulename"]));
-    modulenameValueAcquired = true;
+    this._moduleNameField = ((string)(this.Session["moduleName"]));
+    moduleNameValueAcquired = true;
 }
-if ((modulenameValueAcquired == false))
+if ((moduleNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("modulename");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("moduleName");
     if ((data != null))
     {
-        this._modulenameField = ((string)(data));
+        this._moduleNameField = ((string)(data));
     }
 }
-bool objectnameValueAcquired = false;
-if (this.Session.ContainsKey("objectname"))
+bool typeNameValueAcquired = false;
+if (this.Session.ContainsKey("typeName"))
 {
-    this._objectnameField = ((string)(this.Session["objectname"]));
-    objectnameValueAcquired = true;
+    this._typeNameField = ((string)(this.Session["typeName"]));
+    typeNameValueAcquired = true;
 }
-if ((objectnameValueAcquired == false))
+if ((typeNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("objectname");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("typeName");
     if ((data != null))
     {
-        this._objectnameField = ((string)(data));
-    }
-}
-bool objectpathValueAcquired = false;
-if (this.Session.ContainsKey("objectpath"))
-{
-    this._objectpathField = ((string)(this.Session["objectpath"]));
-    objectpathValueAcquired = true;
-}
-if ((objectpathValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("objectpath");
-    if ((data != null))
-    {
-        this._objectpathField = ((string)(data));
+        this._typeNameField = ((string)(data));
     }
 }
 

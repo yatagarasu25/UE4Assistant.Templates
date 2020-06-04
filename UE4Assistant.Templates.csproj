@@ -59,10 +59,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Class_h.tt</DependentUpon>
     </Compile>
+    <Compile Update="Templates\Generators\Enum_h.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Enum_h.tt</DependentUpon>
+    </Compile>
     <Compile Update="Templates\Generators\Interface_h.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Interface_h.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Generators\HeaderFile.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HeaderFile.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Generators\SourceFile.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SourceFile.tt</DependentUpon>
     </Compile>
     <Compile Update="Templates\Generators\SimpleClass_cpp.cs">
       <AutoGen>True</AutoGen>
@@ -73,6 +88,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SimpleClass_h.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Generators\Struct_h.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Struct_h.tt</DependentUpon>
     </Compile>
     <Compile Update="Templates\ModuleBuild_cs.cs">
       <AutoGen>True</AutoGen>
@@ -184,9 +204,21 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Class_h.cs</LastGenOutput>
     </None>
+    <None Update="Templates\Generators\Enum_h.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Enum_h.cs</LastGenOutput>
+    </None>
     <None Update="Templates\Generators\Interface_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Interface_h.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Generators\HeaderFile.tt">
+      <LastGenOutput>HeaderFile.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Templates\Generators\SourceFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SourceFile.cs</LastGenOutput>
     </None>
     <None Update="Templates\Generators\SimpleClass_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -195,6 +227,10 @@
     <None Update="Templates\Generators\SimpleClass_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SimpleClass_h.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Generators\Struct_h.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Struct_h.cs</LastGenOutput>
     </None>
     <None Update="Templates\ModuleBuild_cs.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

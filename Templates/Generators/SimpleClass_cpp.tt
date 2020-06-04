@@ -3,26 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".cs" #>
-<#@ parameter name="modulename" type="System.String" #>
-<#@ parameter name="objectname" type="System.String" #>
-<#@ parameter name="objectpath" type="System.String" #>
-<#@ parameter name="basename" type="System.String" #>
-<#@ parameter name="typename" type="System.String" #>
-<#@ parameter name="hasFinalHeader" type="System.Boolean" #>
-<#@ parameter name="hasLocTextNamespace" type="System.Boolean" #>
-<#@ parameter name="locTextNamespaceName" type="System.String" #>
-#include "<#= this.modulename #>PrivatePCH.h"
-#include "<#= this.objectpath #><#= this.objectname #>.h"
-
-<# if (hasFinalHeader) { #>#include "<#= this.modulename #>.final.h"
-<# } #>
-
-<# if (hasLocTextNamespace) { #>#define LOCTEXT_NAMESPACE "<#= this.locTextNamespaceName ?? this.modulename #>"
-<# } #>
-
-
-
-
-<# if (hasLocTextNamespace) { #>#undef LOCTEXT_NAMESPACE
-<# } #>
+<#@ parameter name="moduleName" type="System.String" #>
+<#@ parameter name="typePrefix" type="System.String" #>
+<#@ parameter name="typeName" type="System.String" #>
+<#@ parameter name="baseName" type="System.String" #>

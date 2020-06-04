@@ -28,83 +28,55 @@ namespace UE4Assistant.Templates.Generators
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("#pragma once\r\n\r\n");
+            this.Write("UCLASS()\r\nclass ");
             
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
- foreach (string include in this.extraincludes) { 
-            
-            #line default
-            #line hidden
-            this.Write("#include \"");
-            
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(include));
-            
-            #line default
-            #line hidden
-            this.Write("\"\r\n");
-            
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
- }
-            
-            #line default
-            #line hidden
-            this.Write("#include \"");
-            
-            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
-            
-            #line default
-            #line hidden
-            this.Write(".generated.h\"\r\n\r\n\r\n\r\nUCLASS()\r\nclass ");
-            
-            #line 23 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename.ToUpper()));
+            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.moduleName.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_API ");
             
-            #line 23 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.typename));
+            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.typePrefix));
             
             #line default
             #line hidden
             
-            #line 23 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
+            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.typeName));
             
             #line default
             #line hidden
             this.Write(" : public ");
             
-            #line 23 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.basename));
+            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.baseName));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\tGENERATED_BODY()\r\n\r\n\r\npublic:\r\n\t");
             
-            #line 29 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
+            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
  if(hasConstructor) { 
             
             #line default
             #line hidden
             
-            #line 29 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.typename));
+            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.typePrefix));
             
             #line default
             #line hidden
             
-            #line 29 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
+            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.typeName));
             
             #line default
             #line hidden
             this.Write("(const FObjectInitializer& ObjectInitializer);\r\n");
             
-            #line 30 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
+            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
  } 
             
             #line default
@@ -115,81 +87,55 @@ namespace UE4Assistant.Templates.Generators
         
         #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Class_h.tt"
 
-private string _modulenameField;
+private string _moduleNameField;
 
 /// <summary>
-/// Access the modulename parameter of the template.
+/// Access the moduleName parameter of the template.
 /// </summary>
-private string modulename
+private string moduleName
 {
     get
     {
-        return this._modulenameField;
+        return this._moduleNameField;
     }
 }
 
-private string _objectnameField;
+private string _typePrefixField;
 
 /// <summary>
-/// Access the objectname parameter of the template.
+/// Access the typePrefix parameter of the template.
 /// </summary>
-private string objectname
+private string typePrefix
 {
     get
     {
-        return this._objectnameField;
+        return this._typePrefixField;
     }
 }
 
-private string _objectpathField;
+private string _typeNameField;
 
 /// <summary>
-/// Access the objectpath parameter of the template.
+/// Access the typeName parameter of the template.
 /// </summary>
-private string objectpath
+private string typeName
 {
     get
     {
-        return this._objectpathField;
+        return this._typeNameField;
     }
 }
 
-private global::System.Collections.Generic.List<System.String> _extraincludesField;
+private string _baseNameField;
 
 /// <summary>
-/// Access the extraincludes parameter of the template.
+/// Access the baseName parameter of the template.
 /// </summary>
-private global::System.Collections.Generic.List<System.String> extraincludes
+private string baseName
 {
     get
     {
-        return this._extraincludesField;
-    }
-}
-
-private string _basenameField;
-
-/// <summary>
-/// Access the basename parameter of the template.
-/// </summary>
-private string basename
-{
-    get
-    {
-        return this._basenameField;
-    }
-}
-
-private string _typenameField;
-
-/// <summary>
-/// Access the typename parameter of the template.
-/// </summary>
-private string typename
-{
-    get
-    {
-        return this._typenameField;
+        return this._baseNameField;
     }
 }
 
@@ -214,88 +160,60 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
-bool modulenameValueAcquired = false;
-if (this.Session.ContainsKey("modulename"))
+bool moduleNameValueAcquired = false;
+if (this.Session.ContainsKey("moduleName"))
 {
-    this._modulenameField = ((string)(this.Session["modulename"]));
-    modulenameValueAcquired = true;
+    this._moduleNameField = ((string)(this.Session["moduleName"]));
+    moduleNameValueAcquired = true;
 }
-if ((modulenameValueAcquired == false))
+if ((moduleNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("modulename");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("moduleName");
     if ((data != null))
     {
-        this._modulenameField = ((string)(data));
+        this._moduleNameField = ((string)(data));
     }
 }
-bool objectnameValueAcquired = false;
-if (this.Session.ContainsKey("objectname"))
+bool typePrefixValueAcquired = false;
+if (this.Session.ContainsKey("typePrefix"))
 {
-    this._objectnameField = ((string)(this.Session["objectname"]));
-    objectnameValueAcquired = true;
+    this._typePrefixField = ((string)(this.Session["typePrefix"]));
+    typePrefixValueAcquired = true;
 }
-if ((objectnameValueAcquired == false))
+if ((typePrefixValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("objectname");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("typePrefix");
     if ((data != null))
     {
-        this._objectnameField = ((string)(data));
+        this._typePrefixField = ((string)(data));
     }
 }
-bool objectpathValueAcquired = false;
-if (this.Session.ContainsKey("objectpath"))
+bool typeNameValueAcquired = false;
+if (this.Session.ContainsKey("typeName"))
 {
-    this._objectpathField = ((string)(this.Session["objectpath"]));
-    objectpathValueAcquired = true;
+    this._typeNameField = ((string)(this.Session["typeName"]));
+    typeNameValueAcquired = true;
 }
-if ((objectpathValueAcquired == false))
+if ((typeNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("objectpath");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("typeName");
     if ((data != null))
     {
-        this._objectpathField = ((string)(data));
+        this._typeNameField = ((string)(data));
     }
 }
-bool extraincludesValueAcquired = false;
-if (this.Session.ContainsKey("extraincludes"))
+bool baseNameValueAcquired = false;
+if (this.Session.ContainsKey("baseName"))
 {
-    this._extraincludesField = ((global::System.Collections.Generic.List<System.String>)(this.Session["extraincludes"]));
-    extraincludesValueAcquired = true;
+    this._baseNameField = ((string)(this.Session["baseName"]));
+    baseNameValueAcquired = true;
 }
-if ((extraincludesValueAcquired == false))
+if ((baseNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("extraincludes");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("baseName");
     if ((data != null))
     {
-        this._extraincludesField = ((global::System.Collections.Generic.List<System.String>)(data));
-    }
-}
-bool basenameValueAcquired = false;
-if (this.Session.ContainsKey("basename"))
-{
-    this._basenameField = ((string)(this.Session["basename"]));
-    basenameValueAcquired = true;
-}
-if ((basenameValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("basename");
-    if ((data != null))
-    {
-        this._basenameField = ((string)(data));
-    }
-}
-bool typenameValueAcquired = false;
-if (this.Session.ContainsKey("typename"))
-{
-    this._typenameField = ((string)(this.Session["typename"]));
-    typenameValueAcquired = true;
-}
-if ((typenameValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("typename");
-    if ((data != null))
-    {
-        this._typenameField = ((string)(data));
+        this._baseNameField = ((string)(data));
     }
 }
 bool hasConstructorValueAcquired = false;

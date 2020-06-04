@@ -3,23 +3,15 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".cs" #>
-<#@ parameter name="modulename" type="System.String" #>
-<#@ parameter name="objectname" type="System.String" #>
-<#@ parameter name="objectpath" type="System.String" #>
-#pragma once
-
-#include "<#= this.objectname #>.generated.h"
-
-
-
+<#@ parameter name="moduleName" type="System.String" #>
+<#@ parameter name="typeName" type="System.String" #>
 UINTERFACE(Blueprintable)
-class <#= this.modulename.ToUpper() #>_API U<#= this.objectname #> : public UInterface
+class <#= this.moduleName.ToUpper() #>_API U<#= this.typeName #> : public UInterface
 {
-	GENERATED_UINTERFACE_BODY()
+	GENERATED_BODY()
 };
 
-class <#= this.modulename.ToUpper() #>_API I<#= this.objectname #>
+class <#= this.moduleName.ToUpper() #>_API I<#= this.typeName #>
 {
-	GENERATED_IINTERFACE_BODY()
+	GENERATED_BODY()
 };

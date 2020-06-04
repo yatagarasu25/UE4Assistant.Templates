@@ -3,25 +3,33 @@ using System.IO;
 using SystemEx;
 using UE4Assistant.Templates;
 using UE4Assistant.Templates.Config;
+using UE4Assistant.Templates.Generators;
 using UE4Assistant.Templates.Source;
 using UE4Assistant.Templates.Source.GameMode;
 using UE4Assistant.Templates.Source.GameState;
 using UE4Assistant.Templates.Source.PlayerState;
+using static SystemEx.Template;
 
 namespace UE4Assistant
 {
+	public enum TypePrefix
+	{
+		A,
+		U,
+		F,
+	}
+
 	public static class Template
 	{
-		public static string TransformToText<TemplateType>(IDictionary<string, object> parameters) where TemplateType : new()
+		public static TypePrefix GetTypePrefix(this string typeName)
 		{
-			var TemplateInstance = new TemplateType();
-			typeof(TemplateType).GetProperty("Session").SetValue(TemplateInstance, parameters);
-			typeof(TemplateType).GetMethod("Initialize").Invoke(TemplateInstance, null);
-
-			string Result = (string)typeof(TemplateType).GetMethod("TransformText").Invoke(TemplateInstance, null);
-			return Result.Replace("\r\n", System.Environment.NewLine);
+			switch (typeName[0])
+			{
+				case 'A': return TypePrefix.A;
+				case 'U': return TypePrefix.U;
+				default: return TypePrefix.F;
+			}
 		}
-
 
 		public static void CreateModule(string RootPath, string ModuleName)
 		{
@@ -161,6 +169,86 @@ namespace UE4Assistant
 			project.Save(ProjectName + ".uproject");
 
 			return project;
+		}
+
+		public static string CreateSourceFile(string content, string mainHeader
+			, string pchHeader = null, string finalHeader = null, string locTextNamespaceName = null)
+		{
+			return TransformToText<SourceFile>(new {
+				mainHeader,
+				hasPCHHeader = !string.IsNullOrWhiteSpace(pchHeader),
+				pchHeader,
+				hasFinalHeader = !string.IsNullOrWhiteSpace(finalHeader),
+				finalHeader,
+				hasLocTextNamespace = !string.IsNullOrWhiteSpace(locTextNamespaceName),
+				locTextNamespaceName,
+				content
+			}.ToExpando());
+		}
+
+		public static string CreateHeaderFile(string content, string generatedHeader = null)
+		{
+			return TransformToText<HeaderFile>(new
+			{
+				hasGeneratedHeader = !string.IsNullOrWhiteSpace(generatedHeader),
+				generatedHeader,
+				content
+			}.ToExpando());
+		}
+
+		public static string CreateClass_cpp(string moduleName, TypePrefix typePrefix, string typeName, string baseName, bool hasConstructor)
+		{
+			return TransformToText<Class_cpp>(new
+			{
+				moduleName,
+				typePrefix = typePrefix.ToString(),
+				typeName,
+				baseName,
+				hasConstructor
+			}.ToExpando());
+		}
+
+		public static string CreateClass_h(string moduleName, TypePrefix typePrefix, string typeName, string baseName, bool hasConstructor)
+		{
+			return TransformToText<Class_h>(new
+			{
+				moduleName,
+				typePrefix = typePrefix.ToString(),
+				typeName,
+				baseName,
+				hasConstructor
+			}.ToExpando());
+		}
+
+		public static string CreateSimpleClass_cpp(string moduleName, TypePrefix typePrefix, string typeName, string baseName)
+		{
+			return TransformToText<SimpleClass_cpp>(new
+			{
+				moduleName,
+				typePrefix = typePrefix.ToString(),
+				typeName,
+				baseName
+			}.ToExpando());
+		}
+
+		public static string CreateSimpleClass_h(string moduleName, TypePrefix typePrefix, string typeName, string baseName)
+		{
+			return TransformToText<SimpleClass_h>(new
+			{
+				moduleName,
+				typePrefix = typePrefix.ToString(),
+				typeName,
+				baseName
+			}.ToExpando());
+		}
+
+		public static string CreateInterface_h(string moduleName, string typeName)
+		{
+			return TransformToText<Interface_h>(new
+			{
+				moduleName,
+				typeName,
+			}.ToExpando());
 		}
 	}
 }

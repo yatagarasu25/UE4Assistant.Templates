@@ -28,188 +28,60 @@ namespace UE4Assistant.Templates.Generators
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("#include \"");
-            
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
-            
-            #line default
-            #line hidden
-            this.Write("PrivatePCH.h\"\r\n#include \"");
-            
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.objectpath));
-            
-            #line default
-            #line hidden
-            
-            #line 16 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.objectname));
-            
-            #line default
-            #line hidden
-            this.Write(".h\"\r\n\r\n");
-            
-            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
- if (hasFinalHeader) { 
-            
-            #line default
-            #line hidden
-            this.Write("#include \"");
-            
-            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.modulename));
-            
-            #line default
-            #line hidden
-            this.Write(".final.h\"\r\n");
-            
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
- } 
-            
-            #line default
-            #line hidden
-            this.Write("\r\n");
-            
-            #line 21 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
- if (hasLocTextNamespace) { 
-            
-            #line default
-            #line hidden
-            this.Write("#define LOCTEXT_NAMESPACE \"");
-            
-            #line 21 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.locTextNamespaceName ?? this.modulename));
-            
-            #line default
-            #line hidden
-            this.Write("\"\r\n");
-            
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
- } 
-            
-            #line default
-            #line hidden
-            this.Write("\r\n\r\n\r\n\r\n");
-            
-            #line 27 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
- if (hasLocTextNamespace) { 
-            
-            #line default
-            #line hidden
-            this.Write("#undef LOCTEXT_NAMESPACE\r\n");
-            
-            #line 28 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
- } 
-            
-            #line default
-            #line hidden
             return this.GenerationEnvironment.ToString();
         }
         
         #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SimpleClass_cpp.tt"
 
-private string _modulenameField;
+private string _moduleNameField;
 
 /// <summary>
-/// Access the modulename parameter of the template.
+/// Access the moduleName parameter of the template.
 /// </summary>
-private string modulename
+private string moduleName
 {
     get
     {
-        return this._modulenameField;
+        return this._moduleNameField;
     }
 }
 
-private string _objectnameField;
+private string _typePrefixField;
 
 /// <summary>
-/// Access the objectname parameter of the template.
+/// Access the typePrefix parameter of the template.
 /// </summary>
-private string objectname
+private string typePrefix
 {
     get
     {
-        return this._objectnameField;
+        return this._typePrefixField;
     }
 }
 
-private string _objectpathField;
+private string _typeNameField;
 
 /// <summary>
-/// Access the objectpath parameter of the template.
+/// Access the typeName parameter of the template.
 /// </summary>
-private string objectpath
+private string typeName
 {
     get
     {
-        return this._objectpathField;
+        return this._typeNameField;
     }
 }
 
-private string _basenameField;
+private string _baseNameField;
 
 /// <summary>
-/// Access the basename parameter of the template.
+/// Access the baseName parameter of the template.
 /// </summary>
-private string basename
+private string baseName
 {
     get
     {
-        return this._basenameField;
-    }
-}
-
-private string _typenameField;
-
-/// <summary>
-/// Access the typename parameter of the template.
-/// </summary>
-private string typename
-{
-    get
-    {
-        return this._typenameField;
-    }
-}
-
-private bool _hasFinalHeaderField;
-
-/// <summary>
-/// Access the hasFinalHeader parameter of the template.
-/// </summary>
-private bool hasFinalHeader
-{
-    get
-    {
-        return this._hasFinalHeaderField;
-    }
-}
-
-private bool _hasLocTextNamespaceField;
-
-/// <summary>
-/// Access the hasLocTextNamespace parameter of the template.
-/// </summary>
-private bool hasLocTextNamespace
-{
-    get
-    {
-        return this._hasLocTextNamespaceField;
-    }
-}
-
-private string _locTextNamespaceNameField;
-
-/// <summary>
-/// Access the locTextNamespaceName parameter of the template.
-/// </summary>
-private string locTextNamespaceName
-{
-    get
-    {
-        return this._locTextNamespaceNameField;
+        return this._baseNameField;
     }
 }
 
@@ -221,116 +93,60 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
-bool modulenameValueAcquired = false;
-if (this.Session.ContainsKey("modulename"))
+bool moduleNameValueAcquired = false;
+if (this.Session.ContainsKey("moduleName"))
 {
-    this._modulenameField = ((string)(this.Session["modulename"]));
-    modulenameValueAcquired = true;
+    this._moduleNameField = ((string)(this.Session["moduleName"]));
+    moduleNameValueAcquired = true;
 }
-if ((modulenameValueAcquired == false))
+if ((moduleNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("modulename");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("moduleName");
     if ((data != null))
     {
-        this._modulenameField = ((string)(data));
+        this._moduleNameField = ((string)(data));
     }
 }
-bool objectnameValueAcquired = false;
-if (this.Session.ContainsKey("objectname"))
+bool typePrefixValueAcquired = false;
+if (this.Session.ContainsKey("typePrefix"))
 {
-    this._objectnameField = ((string)(this.Session["objectname"]));
-    objectnameValueAcquired = true;
+    this._typePrefixField = ((string)(this.Session["typePrefix"]));
+    typePrefixValueAcquired = true;
 }
-if ((objectnameValueAcquired == false))
+if ((typePrefixValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("objectname");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("typePrefix");
     if ((data != null))
     {
-        this._objectnameField = ((string)(data));
+        this._typePrefixField = ((string)(data));
     }
 }
-bool objectpathValueAcquired = false;
-if (this.Session.ContainsKey("objectpath"))
+bool typeNameValueAcquired = false;
+if (this.Session.ContainsKey("typeName"))
 {
-    this._objectpathField = ((string)(this.Session["objectpath"]));
-    objectpathValueAcquired = true;
+    this._typeNameField = ((string)(this.Session["typeName"]));
+    typeNameValueAcquired = true;
 }
-if ((objectpathValueAcquired == false))
+if ((typeNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("objectpath");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("typeName");
     if ((data != null))
     {
-        this._objectpathField = ((string)(data));
+        this._typeNameField = ((string)(data));
     }
 }
-bool basenameValueAcquired = false;
-if (this.Session.ContainsKey("basename"))
+bool baseNameValueAcquired = false;
+if (this.Session.ContainsKey("baseName"))
 {
-    this._basenameField = ((string)(this.Session["basename"]));
-    basenameValueAcquired = true;
+    this._baseNameField = ((string)(this.Session["baseName"]));
+    baseNameValueAcquired = true;
 }
-if ((basenameValueAcquired == false))
+if ((baseNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("basename");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("baseName");
     if ((data != null))
     {
-        this._basenameField = ((string)(data));
-    }
-}
-bool typenameValueAcquired = false;
-if (this.Session.ContainsKey("typename"))
-{
-    this._typenameField = ((string)(this.Session["typename"]));
-    typenameValueAcquired = true;
-}
-if ((typenameValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("typename");
-    if ((data != null))
-    {
-        this._typenameField = ((string)(data));
-    }
-}
-bool hasFinalHeaderValueAcquired = false;
-if (this.Session.ContainsKey("hasFinalHeader"))
-{
-    this._hasFinalHeaderField = ((bool)(this.Session["hasFinalHeader"]));
-    hasFinalHeaderValueAcquired = true;
-}
-if ((hasFinalHeaderValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("hasFinalHeader");
-    if ((data != null))
-    {
-        this._hasFinalHeaderField = ((bool)(data));
-    }
-}
-bool hasLocTextNamespaceValueAcquired = false;
-if (this.Session.ContainsKey("hasLocTextNamespace"))
-{
-    this._hasLocTextNamespaceField = ((bool)(this.Session["hasLocTextNamespace"]));
-    hasLocTextNamespaceValueAcquired = true;
-}
-if ((hasLocTextNamespaceValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("hasLocTextNamespace");
-    if ((data != null))
-    {
-        this._hasLocTextNamespaceField = ((bool)(data));
-    }
-}
-bool locTextNamespaceNameValueAcquired = false;
-if (this.Session.ContainsKey("locTextNamespaceName"))
-{
-    this._locTextNamespaceNameField = ((string)(this.Session["locTextNamespaceName"]));
-    locTextNamespaceNameValueAcquired = true;
-}
-if ((locTextNamespaceNameValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("locTextNamespaceName");
-    if ((data != null))
-    {
-        this._locTextNamespaceNameField = ((string)(data));
+        this._baseNameField = ((string)(data));
     }
 }
 

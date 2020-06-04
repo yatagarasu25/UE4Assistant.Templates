@@ -3,16 +3,10 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".cs" #>
-<#@ parameter name="modulename" type="System.String" #>
-<#@ parameter name="objectname" type="System.String" #>
-<#@ parameter name="objectpath" type="System.String" #>
-<#@ parameter name="basename" type="System.String" #>
-<#@ parameter name="typename" type="System.String" #>
-#pragma once
-
-
-
-class <#= this.typename #><#= this.objectname #> : public <#= this.basename #>
+<#@ parameter name="moduleName" type="System.String" #>
+<#@ parameter name="typePrefix" type="System.String" #>
+<#@ parameter name="typeName" type="System.String" #>
+<#@ parameter name="baseName" type="System.String" #>
+class <#= this.typePrefix #><#= this.typeName #> : public <#= this.baseName #>
 {
 };
