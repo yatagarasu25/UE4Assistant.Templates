@@ -250,5 +250,21 @@ namespace UE4Assistant
 				typeName,
 			}.ToExpando());
 		}
+
+		public static string CreateStruct_h(string typeName)
+		{
+			return TransformToText<Struct_h>(new
+			{
+				typeName,
+			}.ToExpando());
+		}
+
+		public static string CreateEnum_h(string typeName)
+		{
+			return TransformToText<Enum_h>(new
+			{
+				typeName,
+			}.ToExpando());
+		}
 	}
 }
