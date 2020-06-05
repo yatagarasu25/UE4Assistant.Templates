@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Net.Http.Headers;
 using SystemEx;
 using UE4Assistant.Templates;
 using UE4Assistant.Templates.Config;
@@ -43,7 +45,8 @@ namespace UE4Assistant
 			Directory.CreateDirectory(privatePath);
 			Directory.CreateDirectory(publicPath);
 
-			var parameters = new {
+			var parameters = new
+			{
 				modulename = ModuleName,
 				isprimary = false
 			}.ToExpando();
@@ -174,7 +177,8 @@ namespace UE4Assistant
 		public static string CreateSourceFile(string content, string mainHeader
 			, string pchHeader = null, string finalHeader = null, string locTextNamespaceName = null)
 		{
-			return TransformToText<SourceFile>(new {
+			return TransformToText<SourceFile>(new
+			{
 				mainHeader,
 				hasPCHHeader = !string.IsNullOrWhiteSpace(pchHeader),
 				pchHeader,
@@ -249,6 +253,114 @@ namespace UE4Assistant
 				moduleName,
 				typeName,
 			}.ToExpando());
+		}
+
+
+		public static string[] CreateClass(string path, string typeName, string baseName, bool hasConstructor, List<string> extraincludes)
+		{
+			var typePrefix = baseName.GetTypePrefix();
+			string objectfolder = Directory.GetCurrentDirectory();
+
+			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(objectfolder, UnrealItemType.Module);
+			if (UnrealItem == null)
+			{
+				throw new Exception("This command should be run inside module folder.");
+			}
+
+			string moduleName = UnrealItem.Name;
+			string objectPath = new UnrealItemPath(UnrealItem, objectfolder).ItemPath;
+
+			string classesPath = Path.Combine(UnrealItem.ModuleClassesPath, objectPath);
+			string privatePath = Path.Combine(UnrealItem.ModulePrivatePath, objectPath);
+
+			Directory.CreateDirectory(classesPath);
+			Directory.CreateDirectory(privatePath);
+
+			string sourceContent;
+			string headerContent;
+			string generatedHeader = null;
+			string pchHeader = null;
+			string finalHeader = null;
+			string locTextNamespaceName = null;
+
+			if (typePrefix == TypePrefix.U || typePrefix == TypePrefix.A)
+			{
+				generatedHeader = $"{typeName}.generated.h";
+				headerContent = CreateClass_h(moduleName, typePrefix, typeName, baseName, hasConstructor);
+				sourceContent = CreateClass_cpp(moduleName, typePrefix, typeName, baseName, hasConstructor);
+			}
+			else
+			{
+				headerContent = CreateSimpleClass_h(moduleName, typePrefix, typeName, baseName);
+				sourceContent = CreateSimpleClass_cpp(moduleName, typePrefix, typeName, baseName);
+			}
+
+			var Result = new string[]
+			{
+				Path.Combine(classesPath, typeName + ".h"),
+				Path.Combine(privatePath, typeName + ".cpp")
+			};
+
+			File.WriteAllText(Result[0]
+				, CreateHeaderFile(headerContent
+					, generatedHeader: generatedHeader));
+			File.WriteAllText(Result[1]
+				, CreateSourceFile(sourceContent, Path.Combine(objectPath, $"{typeName}.h")
+					, pchHeader: pchHeader, finalHeader: finalHeader, locTextNamespaceName: locTextNamespaceName));
+
+			return Result;
+		}
+
+		public static string[] CreateInterface(string path, string typeName)
+		{
+			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
+			if (UnrealItem == null)
+			{
+				throw new Exception("This command should be run inside module folder.");
+			}
+
+			string moduleName = UnrealItem.Name;
+			string objectpath = new UnrealItemPath(UnrealItem, path).ItemPath;
+			string classesPath = Path.Combine(UnrealItem.ModuleClassesPath, objectpath);
+
+			Directory.CreateDirectory(classesPath);
+
+			var Result = new string[]
+			{
+				Path.Combine(classesPath, typeName + ".h")
+			};
+
+			File.WriteAllText(Result[0]
+				, CreateHeaderFile(CreateInterface_h(moduleName, typeName)
+					, generatedHeader: $"{typeName}.generated.h"));
+
+			return Result;
+		}
+
+		public static string[] CreateDataAsset(string path, string typeName, string baseName)
+		{
+			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
+			if (UnrealItem == null)
+			{
+				throw new Exception("This command should be run inside module folder.");
+			}
+
+			string moduleName = UnrealItem.Name;
+			string objectPath = new UnrealItemPath(UnrealItem, path).ItemPath;
+			string classesPath = Path.Combine(UnrealItem.ModuleClassesPath, objectPath);
+
+			Directory.CreateDirectory(classesPath);
+
+			var Result = new string[]
+			{
+				Path.Combine(classesPath, typeName + ".h")
+			};
+
+			File.WriteAllText(Result[0]
+				, CreateHeaderFile(CreateClass_h(moduleName, TypePrefix.U, typeName, baseName, false)
+					, generatedHeader: $"{typeName}.generated.h"));
+
+			return Result;
 		}
 	}
 }
