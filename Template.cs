@@ -273,17 +273,15 @@ namespace UE4Assistant
 
 		public static string[] CreateClass(string path, string typeName, string baseName, bool hasConstructor, List<string> extraincludes)
 		{
-			var typePrefix = baseName.GetTypePrefix();
-			string objectfolder = Directory.GetCurrentDirectory();
-
-			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(objectfolder, UnrealItemType.Module);
+			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
 			if (UnrealItem == null)
 			{
 				throw new Exception("This command should be run inside module folder.");
 			}
 
+			var typePrefix = baseName.GetTypePrefix();
 			string moduleName = UnrealItem.Name;
-			string objectPath = new UnrealItemPath(UnrealItem, objectfolder).ItemPath;
+			string objectPath = new UnrealItemPath(UnrealItem, path).ItemPath;
 
 			string classesPath = Path.Combine(UnrealItem.ModuleClassesPath, objectPath);
 			string privatePath = Path.Combine(UnrealItem.ModulePrivatePath, objectPath);
