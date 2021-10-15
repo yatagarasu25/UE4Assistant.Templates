@@ -30,28 +30,48 @@ namespace UE4Assistant.Templates.Generators
         {
             this.Write("#pragma once\r\n\r\n");
             
-            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
+            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
+ foreach (var header in headers) { 
+            
+            #line default
+            #line hidden
+            this.Write("#include \"");
+            
+            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(header));
+            
+            #line default
+            #line hidden
+            this.Write("\"\r\n");
+            
+            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
+ } 
+            
+            #line default
+            #line hidden
+            
+            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
  if (hasGeneratedHeader) { 
             
             #line default
             #line hidden
             this.Write("#include \"");
             
-            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
+            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.generatedHeader));
             
             #line default
             #line hidden
             this.Write("\"\r\n");
             
-            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
+            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
+            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.content));
             
             #line default
@@ -61,6 +81,19 @@ namespace UE4Assistant.Templates.Generators
         }
         
         #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\HeaderFile.tt"
+
+private string[] _headersField;
+
+/// <summary>
+/// Access the headers parameter of the template.
+/// </summary>
+private string[] headers
+{
+    get
+    {
+        return this._headersField;
+    }
+}
 
 private bool _hasGeneratedHeaderField;
 
@@ -109,6 +142,20 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
+bool headersValueAcquired = false;
+if (this.Session.ContainsKey("headers"))
+{
+    this._headersField = ((string[])(this.Session["headers"]));
+    headersValueAcquired = true;
+}
+if ((headersValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("headers");
+    if ((data != null))
+    {
+        this._headersField = ((string[])(data));
+    }
+}
 bool hasGeneratedHeaderValueAcquired = false;
 if (this.Session.ContainsKey("hasGeneratedHeader"))
 {

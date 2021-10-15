@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net.Http.Headers;
 using SystemEx;
 using UE4Assistant.Templates;
 using UE4Assistant.Templates.Config;
@@ -175,25 +174,21 @@ namespace UE4Assistant
 		}
 
 		public static string CreateSourceFile(string content, string mainHeader
-			, string pchHeader = null, string finalHeader = null, string locTextNamespaceName = null)
+			, TemplateConfiguration configuration)
 		{
 			return TransformToText<SourceFile>(new
 			{
 				mainHeader,
-				hasPCHHeader = !string.IsNullOrWhiteSpace(pchHeader),
-				pchHeader,
-				hasFinalHeader = !string.IsNullOrWhiteSpace(finalHeader),
-				finalHeader,
-				hasLocTextNamespace = !string.IsNullOrWhiteSpace(locTextNamespaceName),
-				locTextNamespaceName,
+				configuration,
 				content
 			}.ToExpando());
 		}
 
-		public static string CreateHeaderFile(string content, string generatedHeader = null)
+		public static string CreateHeaderFile(string content, string[] headers = null, string generatedHeader = null)
 		{
 			return TransformToText<HeaderFile>(new
 			{
+				headers = headers ?? new string[] { },
 				hasGeneratedHeader = !string.IsNullOrWhiteSpace(generatedHeader),
 				generatedHeader,
 				content
@@ -271,9 +266,10 @@ namespace UE4Assistant
 			}.ToExpando());
 		}
 
-		public static string[] CreateClass(string path, string typeName, string baseName, bool hasConstructor, List<string> extraincludes)
+		public static string[] CreateClass(string path, string typeName, string baseName, bool hasConstructor, string[] headers)
 		{
 			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
+			var Configuration = UnrealItem.ReadConfiguration<TemplateConfiguration>();
 			if (UnrealItem == null)
 			{
 				throw new Exception("This command should be run inside module folder.");
@@ -292,9 +288,6 @@ namespace UE4Assistant
 			string sourceContent;
 			string headerContent;
 			string generatedHeader = null;
-			string pchHeader = null;
-			string finalHeader = null;
-			string locTextNamespaceName = null;
 
 			if (typePrefix == TypePrefix.U || typePrefix == TypePrefix.A)
 			{
@@ -316,10 +309,11 @@ namespace UE4Assistant
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(headerContent
+					, headers: headers
 					, generatedHeader: generatedHeader));
 			File.WriteAllText(Result[1]
-				, CreateSourceFile(sourceContent, Path.Combine(objectPath, $"{typeName}.h")
-					, pchHeader: pchHeader, finalHeader: finalHeader, locTextNamespaceName: locTextNamespaceName));
+				, CreateSourceFile(sourceContent, PathEx.Combine('/', objectPath, $"{typeName}.h")
+					, Configuration));
 
 			return Result;
 		}
@@ -345,6 +339,7 @@ namespace UE4Assistant
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateInterface_h(moduleName, typeName)
+					, headers: new string[] { "UObject/Interface.h" }
 					, generatedHeader: $"{typeName}.generated.h"));
 
 			return Result;
@@ -371,6 +366,7 @@ namespace UE4Assistant
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateClass_h(moduleName, TypePrefix.U, typeName, baseName, false)
+					, headers: new string[] { "Engine/DataTable.h" }
 					, generatedHeader: $"{typeName}.generated.h"));
 
 			return Result;

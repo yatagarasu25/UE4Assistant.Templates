@@ -4,23 +4,18 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ parameter name="mainHeader" type="System.String" #>
-<#@ parameter name="hasPCHHeader" type="System.Boolean" #>
-<#@ parameter name="pchHeader" type="System.String" #>
-<#@ parameter name="hasFinalHeader" type="System.Boolean" #>
-<#@ parameter name="finalHeader" type="System.String" #>
-<#@ parameter name="hasLocTextNamespace" type="System.Boolean" #>
-<#@ parameter name="locTextNamespaceName" type="System.String" #>
+<#@ parameter name="configuration" type="UE4Assistant.TemplateConfiguration" #>
 <#@ parameter name="content" type="System.String" #>
-<# if (hasPCHHeader) { #>#include "<#= this.pchHeader #>"
+<# if (configuration?.pchHeader != null) { #>#include "<#= this.configuration?.pchHeader #>"
 <# } #>#include "<#= this.mainHeader #>"
 
-<# if (hasFinalHeader) { #>#include "<#= this.finalHeader #>"
+<# if (configuration?.finalHeader != null) { #>#include "<#= this.configuration?.finalHeader #>"
 <# } #>
-<# if (hasLocTextNamespace) { #>#define LOCTEXT_NAMESPACE "<#= this.locTextNamespaceName #>"
+<# if (configuration?.locTextNamespaceName != null) { #>#define LOCTEXT_NAMESPACE "<#= this.configuration?.locTextNamespaceName #>"
 <# } #>
 
 <#= this.content #>
 
 
-<# if (hasLocTextNamespace) { #>#undef LOCTEXT_NAMESPACE
+<# if (configuration?.locTextNamespaceName != null) { #>#undef LOCTEXT_NAMESPACE
 <# } #>

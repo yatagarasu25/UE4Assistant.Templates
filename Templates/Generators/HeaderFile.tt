@@ -3,11 +3,14 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="headers" type="System.String[]" #>
 <#@ parameter name="hasGeneratedHeader" type="System.Boolean" #>
 <#@ parameter name="generatedHeader" type="System.String" #>
 <#@ parameter name="content" type="System.String" #>
 #pragma once
 
+<# foreach (var header in headers) { #>#include "<#= header #>"
+<# } #>
 <# if (hasGeneratedHeader) { #>#include "<#= this.generatedHeader #>"
 <# } #>
 

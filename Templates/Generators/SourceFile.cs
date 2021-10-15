@@ -29,90 +29,90 @@ namespace UE4Assistant.Templates.Generators
         public virtual string TransformText()
         {
             
-            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
- if (hasPCHHeader) { 
+            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+ if (configuration?.pchHeader != null) { 
             
             #line default
             #line hidden
             this.Write("#include \"");
             
-            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.pchHeader));
+            #line 9 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.configuration?.pchHeader));
             
             #line default
             #line hidden
             this.Write("\"\r\n");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            #line 10 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
  } 
             
             #line default
             #line hidden
             this.Write("#include \"");
             
-            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            #line 10 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.mainHeader));
             
             #line default
             #line hidden
             this.Write("\"\r\n\r\n");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
- if (hasFinalHeader) { 
+            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+ if (configuration?.finalHeader != null) { 
             
             #line default
             #line hidden
             this.Write("#include \"");
             
-            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.finalHeader));
+            #line 12 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.configuration?.finalHeader));
             
             #line default
             #line hidden
             this.Write("\"\r\n");
             
-            #line 18 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            #line 13 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
- if (hasLocTextNamespace) { 
+            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+ if (configuration?.locTextNamespaceName != null) { 
             
             #line default
             #line hidden
             this.Write("#define LOCTEXT_NAMESPACE \"");
             
-            #line 19 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.locTextNamespaceName));
+            #line 14 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.configuration?.locTextNamespaceName));
             
             #line default
             #line hidden
             this.Write("\"\r\n");
             
-            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            #line 15 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 22 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            #line 17 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.content));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n\r\n");
             
-            #line 25 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
- if (hasLocTextNamespace) { 
+            #line 20 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+ if (configuration?.locTextNamespaceName != null) { 
             
             #line default
             #line hidden
             this.Write("#undef LOCTEXT_NAMESPACE\r\n");
             
-            #line 26 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
+            #line 21 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\SourceFile.tt"
  } 
             
             #line default
@@ -135,81 +135,16 @@ private string mainHeader
     }
 }
 
-private bool _hasPCHHeaderField;
+private global::UE4Assistant.TemplateConfiguration _configurationField;
 
 /// <summary>
-/// Access the hasPCHHeader parameter of the template.
+/// Access the configuration parameter of the template.
 /// </summary>
-private bool hasPCHHeader
+private global::UE4Assistant.TemplateConfiguration configuration
 {
     get
     {
-        return this._hasPCHHeaderField;
-    }
-}
-
-private string _pchHeaderField;
-
-/// <summary>
-/// Access the pchHeader parameter of the template.
-/// </summary>
-private string pchHeader
-{
-    get
-    {
-        return this._pchHeaderField;
-    }
-}
-
-private bool _hasFinalHeaderField;
-
-/// <summary>
-/// Access the hasFinalHeader parameter of the template.
-/// </summary>
-private bool hasFinalHeader
-{
-    get
-    {
-        return this._hasFinalHeaderField;
-    }
-}
-
-private string _finalHeaderField;
-
-/// <summary>
-/// Access the finalHeader parameter of the template.
-/// </summary>
-private string finalHeader
-{
-    get
-    {
-        return this._finalHeaderField;
-    }
-}
-
-private bool _hasLocTextNamespaceField;
-
-/// <summary>
-/// Access the hasLocTextNamespace parameter of the template.
-/// </summary>
-private bool hasLocTextNamespace
-{
-    get
-    {
-        return this._hasLocTextNamespaceField;
-    }
-}
-
-private string _locTextNamespaceNameField;
-
-/// <summary>
-/// Access the locTextNamespaceName parameter of the template.
-/// </summary>
-private string locTextNamespaceName
-{
-    get
-    {
-        return this._locTextNamespaceNameField;
+        return this._configurationField;
     }
 }
 
@@ -248,88 +183,18 @@ if ((mainHeaderValueAcquired == false))
         this._mainHeaderField = ((string)(data));
     }
 }
-bool hasPCHHeaderValueAcquired = false;
-if (this.Session.ContainsKey("hasPCHHeader"))
+bool configurationValueAcquired = false;
+if (this.Session.ContainsKey("configuration"))
 {
-    this._hasPCHHeaderField = ((bool)(this.Session["hasPCHHeader"]));
-    hasPCHHeaderValueAcquired = true;
+    this._configurationField = ((global::UE4Assistant.TemplateConfiguration)(this.Session["configuration"]));
+    configurationValueAcquired = true;
 }
-if ((hasPCHHeaderValueAcquired == false))
+if ((configurationValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("hasPCHHeader");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("configuration");
     if ((data != null))
     {
-        this._hasPCHHeaderField = ((bool)(data));
-    }
-}
-bool pchHeaderValueAcquired = false;
-if (this.Session.ContainsKey("pchHeader"))
-{
-    this._pchHeaderField = ((string)(this.Session["pchHeader"]));
-    pchHeaderValueAcquired = true;
-}
-if ((pchHeaderValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("pchHeader");
-    if ((data != null))
-    {
-        this._pchHeaderField = ((string)(data));
-    }
-}
-bool hasFinalHeaderValueAcquired = false;
-if (this.Session.ContainsKey("hasFinalHeader"))
-{
-    this._hasFinalHeaderField = ((bool)(this.Session["hasFinalHeader"]));
-    hasFinalHeaderValueAcquired = true;
-}
-if ((hasFinalHeaderValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("hasFinalHeader");
-    if ((data != null))
-    {
-        this._hasFinalHeaderField = ((bool)(data));
-    }
-}
-bool finalHeaderValueAcquired = false;
-if (this.Session.ContainsKey("finalHeader"))
-{
-    this._finalHeaderField = ((string)(this.Session["finalHeader"]));
-    finalHeaderValueAcquired = true;
-}
-if ((finalHeaderValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("finalHeader");
-    if ((data != null))
-    {
-        this._finalHeaderField = ((string)(data));
-    }
-}
-bool hasLocTextNamespaceValueAcquired = false;
-if (this.Session.ContainsKey("hasLocTextNamespace"))
-{
-    this._hasLocTextNamespaceField = ((bool)(this.Session["hasLocTextNamespace"]));
-    hasLocTextNamespaceValueAcquired = true;
-}
-if ((hasLocTextNamespaceValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("hasLocTextNamespace");
-    if ((data != null))
-    {
-        this._hasLocTextNamespaceField = ((bool)(data));
-    }
-}
-bool locTextNamespaceNameValueAcquired = false;
-if (this.Session.ContainsKey("locTextNamespaceName"))
-{
-    this._locTextNamespaceNameField = ((string)(this.Session["locTextNamespaceName"]));
-    locTextNamespaceNameValueAcquired = true;
-}
-if ((locTextNamespaceNameValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("locTextNamespaceName");
-    if ((data != null))
-    {
-        this._locTextNamespaceNameField = ((string)(data));
+        this._configurationField = ((global::UE4Assistant.TemplateConfiguration)(data));
     }
 }
 bool contentValueAcquired = false;
