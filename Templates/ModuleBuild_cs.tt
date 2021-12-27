@@ -14,15 +14,15 @@ public class <#= this.modulename #> : ModuleRules
 	public <#= this.modulename #>(ReadOnlyTargetRules Target)
 		: base(Target)
 	{
-		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+		DefaultBuildSettings = BuildSettingsVersion.V2;
 
 		PublicIncludePaths.AddRange(new string[] {
-				"<#= this.modulename #>/Public"
+				Path.Combine(ModuleDirectory, "Public"),
 			});
 
 
 		PrivateIncludePaths.AddRange(new string[] {
-				"<#= this.modulename #>/Private",
+				Path.Combine(ModuleDirectory, "Private"),
 			});
 
 
