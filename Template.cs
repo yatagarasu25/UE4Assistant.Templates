@@ -250,11 +250,14 @@ namespace UE4Assistant
 			}.ToExpando());
 		}
 
-		public static string CreateStruct_h(string typeName)
+		public static string CreateStruct_h(string moduleName, TypePrefix typePrefix, string typeName, string baseName)
 		{
 			return TransformToText<Struct_h>(new
 			{
+				moduleName,
+				typePrefix = typePrefix.ToString(),
 				typeName,
+				baseName
 			}.ToExpando());
 		}
 
@@ -272,7 +275,7 @@ namespace UE4Assistant
 			var Configuration = UnrealItem.ReadConfiguration<TemplateConfiguration>();
 			if (UnrealItem == null)
 			{
-				throw new Exception("This command should be run inside module folder.");
+				throw new Exception($"{path} should be inside module folder.");
 			}
 
 			var typePrefix = baseName.GetTypePrefix();
@@ -323,7 +326,7 @@ namespace UE4Assistant
 			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
 			if (UnrealItem == null)
 			{
-				throw new Exception("This command should be run inside module folder.");
+				throw new Exception($"{path} should be inside module folder.");
 			}
 
 			string moduleName = UnrealItem.Name;
@@ -350,7 +353,7 @@ namespace UE4Assistant
 			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
 			if (UnrealItem == null)
 			{
-				throw new Exception("This command should be run inside module folder.");
+				throw new Exception($"{path} should be inside module folder.");
 			}
 
 			string moduleName = UnrealItem.Name;
@@ -366,6 +369,33 @@ namespace UE4Assistant
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateClass_h(moduleName, TypePrefix.U, typeName, baseName, false)
+					, headers: new string[] { "Engine/DataTable.h" }
+					, generatedHeader: $"{typeName}.generated.h"));
+
+			return Result;
+		}
+
+		public static string[] CreateTableRow(string path, string typeName, string baseName)
+		{
+			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
+			if (UnrealItem == null)
+			{
+				throw new Exception($"{path} should be inside module folder.");
+			}
+
+			string moduleName = UnrealItem.Name;
+			string objectPath = new UnrealItemPath(UnrealItem, path).ItemPath;
+			string classesPath = Path.Combine(UnrealItem.ModuleClassesPath, objectPath);
+
+			Directory.CreateDirectory(classesPath);
+
+			var Result = new string[]
+			{
+				Path.Combine(classesPath, typeName + ".h")
+			};
+
+			File.WriteAllText(Result[0]
+				, CreateHeaderFile(CreateStruct_h(moduleName, TypePrefix.F, typeName, baseName)
 					, headers: new string[] { "Engine/DataTable.h" }
 					, generatedHeader: $"{typeName}.generated.h"));
 

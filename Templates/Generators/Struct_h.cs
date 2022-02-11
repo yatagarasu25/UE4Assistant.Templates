@@ -18,7 +18,7 @@ namespace UE4Assistant.Templates.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+    #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class Struct_h : Struct_hBase
     {
@@ -28,18 +28,76 @@ namespace UE4Assistant.Templates.Generators
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("USTRUCT()\r\nstruct F");
+            this.Write("USTRUCT()\r\nstruct ");
             
-            #line 8 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.moduleName.ToUpper()));
+            
+            #line default
+            #line hidden
+            this.Write("_API ");
+            
+            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.typePrefix));
+            
+            #line default
+            #line hidden
+            
+            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.typeName));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n\tGENERATED_BODY()\r\n\r\n\r\npublic:\r\n\t// TODO: struct fields goes here...\r\n};\r\n");
+            
+            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+ if (this.baseName != null) {
+            
+            #line default
+            #line hidden
+            this.Write(" : public ");
+            
+            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.baseName));
+            
+            #line default
+            #line hidden
+            
+            #line 11 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+}
+            
+            #line default
+            #line hidden
+            this.Write("{\r\n\tGENERATED_BODY()\r\n\r\n\r\npublic:\r\n\t// TODO: struct fields goes here...\r\n};\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "D:\workspace\UE4AssistantVSIX\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+        #line 1 "D:\workspace\UE4AssistantCLI\UE4Assistant.Templates\Templates\Generators\Struct_h.tt"
+
+private string _moduleNameField;
+
+/// <summary>
+/// Access the moduleName parameter of the template.
+/// </summary>
+private string moduleName
+{
+    get
+    {
+        return this._moduleNameField;
+    }
+}
+
+private string _typePrefixField;
+
+/// <summary>
+/// Access the typePrefix parameter of the template.
+/// </summary>
+private string typePrefix
+{
+    get
+    {
+        return this._typePrefixField;
+    }
+}
 
 private string _typeNameField;
 
@@ -54,6 +112,19 @@ private string typeName
     }
 }
 
+private string _baseNameField;
+
+/// <summary>
+/// Access the baseName parameter of the template.
+/// </summary>
+private string baseName
+{
+    get
+    {
+        return this._baseNameField;
+    }
+}
+
 
 /// <summary>
 /// Initialize the template
@@ -62,6 +133,34 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
+bool moduleNameValueAcquired = false;
+if (this.Session.ContainsKey("moduleName"))
+{
+    this._moduleNameField = ((string)(this.Session["moduleName"]));
+    moduleNameValueAcquired = true;
+}
+if ((moduleNameValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("moduleName");
+    if ((data != null))
+    {
+        this._moduleNameField = ((string)(data));
+    }
+}
+bool typePrefixValueAcquired = false;
+if (this.Session.ContainsKey("typePrefix"))
+{
+    this._typePrefixField = ((string)(this.Session["typePrefix"]));
+    typePrefixValueAcquired = true;
+}
+if ((typePrefixValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("typePrefix");
+    if ((data != null))
+    {
+        this._typePrefixField = ((string)(data));
+    }
+}
 bool typeNameValueAcquired = false;
 if (this.Session.ContainsKey("typeName"))
 {
@@ -74,6 +173,20 @@ if ((typeNameValueAcquired == false))
     if ((data != null))
     {
         this._typeNameField = ((string)(data));
+    }
+}
+bool baseNameValueAcquired = false;
+if (this.Session.ContainsKey("baseName"))
+{
+    this._baseNameField = ((string)(this.Session["baseName"]));
+    baseNameValueAcquired = true;
+}
+if ((baseNameValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("baseName");
+    if ((data != null))
+    {
+        this._baseNameField = ((string)(data));
     }
 }
 

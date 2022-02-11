@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace UE4Assistant
+﻿namespace UE4Assistant
 {
 	public class TemplateConfiguration
 	{

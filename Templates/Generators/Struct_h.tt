@@ -3,9 +3,12 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="moduleName" type="System.String" #>
+<#@ parameter name="typePrefix" type="System.String" #>
 <#@ parameter name="typeName" type="System.String" #>
+<#@ parameter name="baseName" type="System.String" #>
 USTRUCT()
-struct F<#= this.typeName #>
+struct <#= this.moduleName.ToUpper() #>_API <#= this.typePrefix #><#= this.typeName #><# if (this.baseName != null) {#> : public <#= this.baseName #><#}#>
 {
 	GENERATED_BODY()
 

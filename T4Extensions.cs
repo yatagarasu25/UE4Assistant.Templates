@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if NETSTANDARD || NET5_0_OR_GREATER || NETCOREAPP2_2_OR_GREATER
+
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
@@ -72,3 +74,5 @@ namespace System.Runtime.Remoting.Messaging
 			state.TryGetValue(name, out AsyncLocal<object> data) ? data.Value : null;
 	}
 }
+
+#endif
