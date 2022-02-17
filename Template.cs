@@ -310,6 +310,15 @@ namespace UE4Assistant
 				Path.Combine(privatePath, typeName + ".cpp")
 			};
 
+			if (File.Exists(Result[0]))
+			{
+				throw new Exception($"File {Result[0]} already exists.");
+			}
+			if (File.Exists(Result[1]))
+			{
+				throw new Exception($"File {Result[1]} already exists.");
+			}
+
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(headerContent
 					, headers: headers
@@ -340,6 +349,11 @@ namespace UE4Assistant
 				Path.Combine(classesPath, typeName + ".h")
 			};
 
+			if (File.Exists(Result[0]))
+			{
+				throw new Exception($"File {Result[0]} already exists.");
+			}
+
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateInterface_h(moduleName, typeName)
 					, headers: new string[] { "UObject/Interface.h" }
@@ -367,6 +381,11 @@ namespace UE4Assistant
 				Path.Combine(classesPath, typeName + ".h")
 			};
 
+			if (File.Exists(Result[0]))
+			{
+				throw new Exception($"File {Result[0]} already exists.");
+			}
+
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateClass_h(moduleName, TypePrefix.U, typeName, baseName, false)
 					, headers: new string[] { "Engine/DataTable.h" }
@@ -393,6 +412,11 @@ namespace UE4Assistant
 			{
 				Path.Combine(classesPath, typeName + ".h")
 			};
+
+			if (File.Exists(Result[0]))
+			{
+				throw new Exception($"File {Result[0]} already exists.");
+			}
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateStruct_h(moduleName, TypePrefix.F, typeName, baseName)
