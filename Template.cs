@@ -74,7 +74,7 @@ namespace UE4Assistant
 			Directory.CreateDirectory(sourcePath);
 
 			{
-				UModule module = new UModule();
+				var module = new UModuleItem();
 				module.Name = ProjectName;
 				CreateModule(project.RootPath, module.Name);
 				project.Modules.Add(module);
@@ -131,7 +131,7 @@ namespace UE4Assistant
 			}
 
 			{
-				UModule module = new UModule();
+				var module = new UModuleItem();
 				module.Name = ProjectName + "Editor";
 				module.Type = UModuleType.Editor;
 				CreateModule(project.RootPath, module.Name);
@@ -168,7 +168,7 @@ namespace UE4Assistant
 					, TransformToText<DefaultInput_ini>(parameters));
 			}
 
-			project.Save(ProjectName + ".uproject");
+			project.Save(ProjectName + ".uproject", JsonIndentation.Default);
 
 			return project;
 		}
