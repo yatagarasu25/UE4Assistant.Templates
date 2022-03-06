@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using SystemEx;
 using UE4Assistant.Templates;
@@ -271,12 +270,8 @@ namespace UE4Assistant
 
 		public static string[] CreateClass(string path, string typeName, string baseName, bool hasConstructor, string[] headers)
 		{
-			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
+			UnrealItemDescription UnrealItem = UnrealItemDescription.RequireUnrealItem(path, UnrealItemType.Module);
 			var Configuration = UnrealItem.ReadConfiguration<TemplateConfiguration>();
-			if (UnrealItem == null)
-			{
-				throw new Exception($"{path} should be inside module folder.");
-			}
 
 			var typePrefix = baseName.GetTypePrefix();
 			string moduleName = UnrealItem.Name;
@@ -310,14 +305,8 @@ namespace UE4Assistant
 				Path.Combine(privatePath, typeName + ".cpp")
 			};
 
-			if (File.Exists(Result[0]))
-			{
-				throw new Exception($"File {Result[0]} already exists.");
-			}
-			if (File.Exists(Result[1]))
-			{
-				throw new Exception($"File {Result[1]} already exists.");
-			}
+			Utilities.ShouldNotExist(Result[0]);
+			Utilities.ShouldNotExist(Result[1]);
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(headerContent
@@ -332,11 +321,7 @@ namespace UE4Assistant
 
 		public static string[] CreateInterface(string path, string typeName)
 		{
-			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
-			if (UnrealItem == null)
-			{
-				throw new Exception($"{path} should be inside module folder.");
-			}
+			UnrealItemDescription UnrealItem = UnrealItemDescription.RequireUnrealItem(path, UnrealItemType.Module);
 
 			string moduleName = UnrealItem.Name;
 			string objectpath = new UnrealItemPath(UnrealItem, path).ItemPath;
@@ -349,10 +334,7 @@ namespace UE4Assistant
 				Path.Combine(classesPath, typeName + ".h")
 			};
 
-			if (File.Exists(Result[0]))
-			{
-				throw new Exception($"File {Result[0]} already exists.");
-			}
+			Utilities.ShouldNotExist(Result[0]);
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateInterface_h(moduleName, typeName)
@@ -364,11 +346,7 @@ namespace UE4Assistant
 
 		public static string[] CreateDataAsset(string path, string typeName, string baseName)
 		{
-			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
-			if (UnrealItem == null)
-			{
-				throw new Exception($"{path} should be inside module folder.");
-			}
+			UnrealItemDescription UnrealItem = UnrealItemDescription.RequireUnrealItem(path, UnrealItemType.Module);
 
 			string moduleName = UnrealItem.Name;
 			string objectPath = new UnrealItemPath(UnrealItem, path).ItemPath;
@@ -381,10 +359,7 @@ namespace UE4Assistant
 				Path.Combine(classesPath, typeName + ".h")
 			};
 
-			if (File.Exists(Result[0]))
-			{
-				throw new Exception($"File {Result[0]} already exists.");
-			}
+			Utilities.ShouldNotExist(Result[0]);
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateClass_h(moduleName, TypePrefix.U, typeName, baseName, false)
@@ -396,11 +371,7 @@ namespace UE4Assistant
 
 		public static string[] CreateTableRow(string path, string typeName, string baseName)
 		{
-			UnrealItemDescription UnrealItem = UnrealItemDescription.DetectUnrealItem(path, UnrealItemType.Module);
-			if (UnrealItem == null)
-			{
-				throw new Exception($"{path} should be inside module folder.");
-			}
+			UnrealItemDescription UnrealItem = UnrealItemDescription.RequireUnrealItem(path, UnrealItemType.Module);
 
 			string moduleName = UnrealItem.Name;
 			string objectPath = new UnrealItemPath(UnrealItem, path).ItemPath;
@@ -413,10 +384,7 @@ namespace UE4Assistant
 				Path.Combine(classesPath, typeName + ".h")
 			};
 
-			if (File.Exists(Result[0]))
-			{
-				throw new Exception($"File {Result[0]} already exists.");
-			}
+			Utilities.ShouldNotExist(Result[0]);
 
 			File.WriteAllText(Result[0]
 				, CreateHeaderFile(CreateStruct_h(moduleName, TypePrefix.F, typeName, baseName)
