@@ -249,7 +249,7 @@ namespace UE4Assistant
 			}.ToExpando());
 		}
 
-		public static string CreateStruct_h(string moduleName, TypePrefix typePrefix, string typeName, string baseName)
+		public static string CreateStruct_h(string moduleName, TypePrefix typePrefix, string typeName, string baseName = null)
 		{
 			return TransformToText<Struct_h>(new
 			{
