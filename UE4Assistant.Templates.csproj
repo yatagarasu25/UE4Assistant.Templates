@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;net471;net50;net60</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;net472;net50;net60</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>UE4Assistant</RootNamespace>
@@ -105,16 +105,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectTarget_cs.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Source\GameInstance_cpp.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GameInstance_cpp.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Source\GameInstance_h.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GameInstance_h.tt</DependentUpon>
-    </Compile>
     <Compile Update="Templates\Source\GameMode\GameMode_cpp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,16 +149,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PrivatePCH_h.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Source\Statics_cpp.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Statics_cpp.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Source\Statics_h.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Statics_h.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -241,14 +221,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ProjectTarget_cs.cs</LastGenOutput>
     </None>
-    <None Update="Templates\Source\GameInstance_cpp.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>GameInstance_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\GameInstance_h.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>GameInstance_h.cs</LastGenOutput>
-    </None>
     <None Update="Templates\Source\GameMode\GameMode_cpp.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GameMode_cpp.cs</LastGenOutput>
@@ -284,14 +256,6 @@
     <None Update="Templates\Source\PrivatePCH_h.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PrivatePCH_h.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\Statics_cpp.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Statics_cpp.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Source\Statics_h.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Statics_h.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

@@ -6,17 +6,13 @@
 <#@ output extension=".cpp" #>
 <#@ parameter name="modulename" type="System.String" #>
 <#@ parameter name="isprimary" type="System.Boolean" #>
-<#@ parameter name="hasFinalHeader" type="System.Boolean" #>
-<#@ parameter name="hasLocTextNamespace" type="System.Boolean" #>
-<#@ parameter name="locTextNamespaceName" type="System.String" #>
-#include "<#= this.modulename #>PrivatePCH.h"
+<#@ parameter name="configuration" type="UE4Assistant.TemplateConfiguration" #>
+#include "<#= this.modulename #>.h"
 #include "Core.h"
-#include "ModuleManager.h"
 
-<# if (hasFinalHeader) { #>#include "<#= this.modulename #>.final.h"
+<# if (configuration?.finalHeader != null) { #>#include "<#= this.configuration?.finalHeader #>"
 <# } #>
-
-<# if (hasLocTextNamespace) { #>#define LOCTEXT_NAMESPACE "<#= this.locTextNamespaceName ?? this.modulename #>"
+<# if (configuration?.locTextNamespaceName != null) { #>#define LOCTEXT_NAMESPACE "<#= this.configuration?.locTextNamespaceName #>"
 <# } #>
 
 
@@ -43,5 +39,5 @@ DEFINE_LOG_CATEGORY(Log<#= this.modulename #>);
 //DEFINE_LOG_CATEGORY(Log<#= this.modulename #>CriticalErrors);
 
 
-<# if (hasLocTextNamespace) { #>#undef LOCTEXT_NAMESPACE
+<# if (configuration?.locTextNamespaceName != null) { #>#undef LOCTEXT_NAMESPACE
 <# } #>

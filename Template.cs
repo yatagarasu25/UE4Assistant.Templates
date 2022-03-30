@@ -46,18 +46,21 @@ namespace UE4Assistant
 			var parameters = new
 			{
 				modulename = ModuleName,
-				isprimary = false
+				isprimary = false,
+				configuration = new TemplateConfiguration {
+					finalHeader = ModuleName + ".final.h"
+				}
 			}.ToExpando();
 
 			File.WriteAllText(Path.Combine(modulePath, ModuleName + ".Build.cs")
 				, TransformToText<ModuleBuild_cs>(parameters));
 			File.WriteAllText(Path.Combine(privatePath, ModuleName + "PrivatePCH.h")
 				, TransformToText<PrivatePCH_h>(parameters));
+			File.WriteAllText(Path.Combine(privatePath, ModuleName + ".final.h"), "");
 			File.WriteAllText(Path.Combine(privatePath, ModuleName + ".cpp")
 				, TransformToText<Module_cpp>(parameters));
 			File.WriteAllText(Path.Combine(publicPath, ModuleName + ".h")
 				, TransformToText<Module_h>(parameters));
-			File.WriteAllText(Path.Combine(publicPath, ModuleName + ".final.h"), "");
 		}
 
 		public static UProject CreateProject(string ProjectName)
@@ -88,6 +91,7 @@ namespace UE4Assistant
 				File.WriteAllText(Path.Combine(sourcePath, ProjectName + ".Target.cs")
 					, TransformToText<ProjectTarget_cs>(parameters));
 
+#if false
 				{
 					parameters.Add("modulename", module.Name);
 					parameters.Add("isprimary", true);
@@ -127,6 +131,7 @@ namespace UE4Assistant
 					File.WriteAllText(Path.Combine(modulePath, module.Name + "Statics.cpp")
 						, TransformToText<Statics_cpp>(parameters));
 				}
+#endif
 			}
 
 			{

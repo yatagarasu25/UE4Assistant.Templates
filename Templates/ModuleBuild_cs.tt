@@ -5,8 +5,8 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
 <#@ parameter name="modulename" type="System.String" #>
+using System.IO;
 using UnrealBuildTool;
-
 
 
 public class <#= this.modulename #> : ModuleRules
@@ -15,6 +15,7 @@ public class <#= this.modulename #> : ModuleRules
 		: base(Target)
 	{
 		DefaultBuildSettings = BuildSettingsVersion.V2;
+		PrivatePCHHeaderFile = "Private/<#= this.modulename #>PrivatePCH.h";
 
 		PublicIncludePaths.AddRange(new string[] {
 				Path.Combine(ModuleDirectory, "Public"),
