@@ -65,7 +65,7 @@ namespace UE4Assistant
 
 		public static UProject CreateProject(string ProjectName)
 		{
-			UProject project = new UProject();
+			UProject project = new UProject(ProjectName);
 
 			string configPath = Path.Combine("Config");
 			string contentPath = Path.Combine("Content");
@@ -172,7 +172,7 @@ namespace UE4Assistant
 					, TransformToText<DefaultInput_ini>(parameters));
 			}
 
-			project.Save(ProjectName + ".uproject", JsonIndentation.Default);
+			project.Save(JsonIndentation.Default);
 
 			return project;
 		}
