@@ -318,7 +318,7 @@ namespace UE4Assistant
 					, headers: headers
 					, generatedHeader: generatedHeader));
 			File.WriteAllText(Result[1]
-				, CreateSourceFile(sourceContent, PathEx.Combine('/', objectPath, $"{typeName}.h")
+				, CreateSourceFile(sourceContent, Path.Combine(objectPath, $"{typeName}.h").AsLinuxPath()
 					, Configuration));
 
 			return Result;
