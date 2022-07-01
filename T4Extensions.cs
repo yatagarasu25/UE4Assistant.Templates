@@ -1,21 +1,7 @@
 ﻿#if NETSTANDARD || NET5_0_OR_GREATER || NETCOREAPP2_2_OR_GREATER
 
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Reflection;
 using System.Threading;
-
-namespace UnityEditorEx.src.editor.Templates
-{
-	internal static class T4Extensions
-	{
-		public static MethodInfo GetMethod(this Type type, string method, params Type[] parameters)
-		{
-			return type.GetRuntimeMethod(method, parameters);
-		}
-	}
-}
 
 namespace System.CodeDom.Compiler
 {

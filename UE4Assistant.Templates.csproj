@@ -6,6 +6,8 @@
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>UE4Assistant</RootNamespace>
     <Version>5.0.3</Version>
+
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,9 +1,8 @@
-﻿namespace UE4Assistant
+﻿namespace UE4Assistant;
+
+public class TemplateConfiguration
 {
-	public class TemplateConfiguration
-	{
-		public string pchHeader = null;
-		public string finalHeader = null;
-		public string locTextNamespaceName = null;
-	}
+	public string pchHeader = null;
+	public string finalHeader = null;
+	public string locTextNamespaceName = null;
 }
